@@ -1,0 +1,323 @@
+/* ================================
+   SLIDER CONTAINER
+================================ */
+.slider-container {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(255, 0, 0, 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+/* ================================
+   TITLE
+================================ */
+.slider-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  font-weight: 700;
+}
+
+.slider-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #ff003c;
+  border-radius: 2px;
+}
+
+/* ================================
+   SLIDER
+================================ */
+.slider {
+  position: relative;
+  max-width: 1200px;
+  height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.slide-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.slide:hover .slide-image {
+  transform: scale(1.05);
+}
+
+/* ================================
+   SLIDE OVERLAY + CONTENT
+================================ */
+.slide-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  padding: 40px;
+  color: white;
+  transition: all 0.4s ease;
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.slide:hover .slide-overlay {
+  height: 100%;
+  background: linear-gradient(to top, rgba(160, 0, 0, 0.85), rgba(255, 0, 60, 0.7));
+  align-items: center;
+}
+
+.slide-content {
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.slide:hover .slide-content {
+  transform: translateY(0);
+}
+
+.slide-title {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-description {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.slide-button {
+  background: #ff003c;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(255, 0, 60, 0.3);
+}
+
+.slide-button:hover {
+  background: #ff004c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 60, 0.4);
+}
+
+/* ================================
+   ARROWS & DOTS
+================================ */
+.slider-arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.arrow:hover {
+  background: rgba(255, 0, 60, 0.8);
+  transform: scale(1.1);
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.dot {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  color: #ff003c;
+  transform: scale(1.5);
+}
+
+.dot:hover {
+  color: #ff003c;
+  transform: scale(1.3);
+}
+
+/* ================================
+   RESPONSIVE BREAKPOINTS
+================================ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .slider {
+    height: 450px;
+  }
+
+  .slide-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Medium devices (Tablets, small laptops) */
+@media (max-width: 768px) {
+  .slider {
+    height: 380px;
+    margin: 0 20px;
+  }
+
+  .slide-title {
+    font-size: 1.5rem;
+  }
+
+  .slide-description {
+    font-size: 1rem;
+  }
+
+  .slider-title {
+    font-size: 2rem;
+  }
+
+  .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* Small phones (480px) */
+@media (max-width: 480px) {
+  .slider {
+    height: 300px;
+  }
+
+  .slide-overlay {
+    padding: 20px;
+  }
+
+  .slide-title {
+    font-size: 1.2rem;
+  }
+
+  .slide-description {
+    font-size: 0.9rem;
+  }
+
+  .slide-button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .slider-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Extra small phones (300px) */
+@media (max-width: 320px) {
+  .slider {
+    height: 240px;
+    margin: 0 10px;
+  }
+
+  .slide-overlay {
+    padding: 15px;
+  }
+
+  .slide-title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .slide-description {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .slide-button {
+    padding: 6px 14px;
+    font-size: 0.75rem;
+  }
+
+  .arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .slider-title {
+    font-size: 1.3rem;
+  }
+}
