@@ -29,7 +29,7 @@ const Services = () => {
       description: "Turn your data into actionable insights with our advanced analytics solutions."
     },
     {
-      icon: "fas fa-support",
+      icon: "fas fa-cogs",
       title: "IT Consulting",
       description: "Expert advice and guidance to help you make the right technology decisions."
     }

@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import "../css/Products.css";
+import crmImage from "../assets/img.png";
+import crmImagee from "../assets/iimg.png";
+
+
+
 
 const Products = () => {
   const [activeTab, setActiveTab] = useState("all");
-  
+
   const products = [
     {
       id: 1,
@@ -28,14 +33,14 @@ const Products = () => {
     },
     {
       id: 4,
-      image: "https://cdn.pixabay.com/photo/2024/03/05/19/42/ai-generated-8615197_1280.jpg",
+      image: crmImage,
       title: "CRM Platform",
       category: "software",
       description: "Customer relationship management tool to grow your business."
     },
     {
       id: 5,
-      image: "https://cdn.pixabay.com/photo/2024/03/05/19/42/ai-generated-8615197_1280.jpg",
+       image: crmImagee,
       title: "Data Analytics Dashboard",
       category: "analytics",
       description: "Visualize and analyze your business data with powerful insights."
@@ -48,9 +53,9 @@ const Products = () => {
       description: "Protect all endpoints in your organization from cyber threats."
     }
   ];
-  
-  const filteredProducts = activeTab === "all" 
-    ? products 
+
+  const filteredProducts = activeTab === "all"
+    ? products
     : products.filter(product => product.category === activeTab);
 
   return (
@@ -60,19 +65,19 @@ const Products = () => {
           <h2>Our Products</h2>
           <p>Discover our innovative software solutions and products</p>
         </div>
-        
+
         <div className="product-filters">
           {["all", "software", "security", "cloud", "analytics"].map(tab => (
-            <button 
+            <button
               key={tab}
-              className={activeTab === tab ? "filter-btn active" : "filter-btn"} 
+              className={activeTab === tab ? "filter-btn active" : "filter-btn"}
               onClick={() => setActiveTab(tab)}
             >
               {tab === "all" ? "All Products" : tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </div>
-        
+
         <div className="products-grid">
           {filteredProducts.map(product => (
             <div key={product.id} className="product-card">
