@@ -146,3 +146,49 @@
     display: flex;
   }
 }
+
+
+@media (max-width: 400px) {
+  .nav-container {
+    padding: 10px 12px;
+  }
+
+  .logo-img {
+    height: 32px;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+    margin-left: 5px;
+  }
+
+  .nav-menu.active {
+    top: 55px;
+    right: 10px;
+    width: 80%;
+  }
+
+  .nav-item {
+    font-size: 0.9rem;
+  }
+
+  .nav-toggle span {
+    width: 22px;
+  }
+}
+
+/* Ultra small phones (300px width) */
+@media (max-width: 320px) {
+  .logo-text {
+    display: none; /* Hide text, keep logo visible */
+  }
+
+  .nav-menu.active {
+    width: 90%;
+    padding: 12px;
+  }
+
+  .nav-item {
+    font-size: 0.85rem;
+  }
+}
