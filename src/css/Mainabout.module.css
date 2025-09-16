@@ -1,0 +1,386 @@
+/* About Page Styles with Red Theme */
+.aboutPage {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.aboutHero {
+  color: white;
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.heroContent p {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Company Overview */
+.companyOverview {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.overviewContent {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.overviewText {
+  flex: 1;
+}
+
+.overviewText h2 {
+  font-size: 2.5rem;
+  color: #d32f2f;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.overviewText h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: #d32f2f;
+}
+
+.overviewText p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.overviewImage {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.overviewImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.overviewImage img:hover {
+  transform: scale(1.03);
+}
+
+/* Leadership Section */
+.leadership {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.leadership h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #d32f2f;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.leadership h2:after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #d32f2f;
+}
+
+.leaderProfile {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.leaderImage {
+  flex: 1;
+  max-width: 350px;
+}
+
+.leaderImage img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.leaderDetails {
+  flex: 2;
+}
+
+.leaderDetails h3 {
+  font-size: 2rem;
+  color: #d32f2f;
+  margin-bottom: 5px;
+}
+
+.leaderTitle {
+  color: #777;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.leaderDetails p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+/* Services Section */
+.services {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #d32f2f;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.services h2:after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #d32f2f;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.serviceCard {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 5px solid #d32f2f;
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.serviceIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background-color: #ffebee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceIcon img {
+  width: 50px;
+  height: 50px;
+}
+
+.serviceCard h3 {
+  font-size: 1.5rem;
+  color: #d32f2f;
+  margin-bottom: 15px;
+}
+
+.serviceCard p {
+  line-height: 1.7;
+}
+
+/* Values Section */
+.values {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.values h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #d32f2f;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.values h2:after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #d32f2f;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.valueItem {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.valueItem:hover {
+  transform: translateY(-5px);
+}
+
+.valueNumber {
+  width: 50px;
+  height: 50px;
+  background-color: #d32f2f;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 auto 20px;
+}
+
+.valueItem h3 {
+  font-size: 1.5rem;
+  color: #d32f2f;
+  margin-bottom: 15px;
+}
+
+.valueItem p {
+  line-height: 1.7;
+}
+
+/* CTA Section */
+.aboutCta {
+  padding: 80px 0;
+  color: white;
+  text-align: center;
+}
+
+.aboutCta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.aboutCta p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.ctaButton {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #b71c1c;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .overviewContent {
+    flex-direction: column;
+  }
+
+  .leaderProfile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .leaderImage {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2.2rem;
+  }
+
+  .heroContent p {
+    font-size: 1.2rem;
+  }
+
+  .overviewText h2,
+  .leadership h2,
+  .services h2,
+  .values h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .aboutHero {
+    padding: 100px 0 60px;
+  }
+
+  .companyOverview,
+  .leadership,
+  .services,
+  .values,
+  .aboutCta {
+    padding: 60px 0;
+  }
+
+  .leaderProfile {
+    padding: 20px;
+  }
+
+  .serviceCard,
+  .valueItem {
+    padding: 20px;
+  }
+}

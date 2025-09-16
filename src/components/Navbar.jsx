@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/Navbar.css";
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,12 +27,12 @@ const Navbar = () => {
         </div>
 
         <div className={`nav-menu ${isOpen ? "active" : ""}`}>
-          <a href="#home" onClick={closeMenu} className="nav-item">
+          <a href="/" onClick={closeMenu} className="nav-item">
             <i className="fas fa-home"></i> Home
           </a>
-          <a href="#about" onClick={closeMenu} className="nav-item">
+          <Link to="/aboutt" onClick={closeMenu} className="nav-item">
             <i className="fas fa-info-circle"></i> About
-          </a>
+          </Link>
           <a href="#services" onClick={closeMenu} className="nav-item">
             <i className="fas fa-cogs"></i> Services
           </a>
