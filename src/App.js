@@ -11,6 +11,7 @@ import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import Mainabout from "./components/MainAbout.jsx";
+import MainServices from "./components/MainServices.jsx";
 import "./App.css";
 
 // Home Page Layout (all sections)
@@ -37,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/aboutt" element={< Mainabout/>} />
+          <Route path="/services" element={<MainServices/>} />
         </Routes>
       </div>
     </Router>

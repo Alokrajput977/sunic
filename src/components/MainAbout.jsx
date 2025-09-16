@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../css/Mainabout.module.css";
+import Footer from "./Footer";
 
 const Mainabout = () => {
   return (
@@ -158,6 +159,7 @@ const Mainabout = () => {
           <button className={styles.ctaButton}>Contact Us Today</button>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

@@ -10,6 +10,24 @@
   transition: all 0.3s ease;
 }
 
+.nav-item {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+  background: #d32f2f; /* active background color */
+  border-radius: 6px;
+  color: #fff;
+}
+
+
 .navbar.scrolled {
   padding: 0.5rem 2rem;
   background: rgba(255, 255, 255, 0.98);
