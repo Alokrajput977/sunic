@@ -17,7 +17,7 @@ const About = () => {
     statsData.forEach((stat, index) => {
       let start = 0;
       const end = stat.value;
-      const duration = 1200;
+      const duration = 13200;
       const increment = Math.ceil(end / (duration / 30));
 
       const counter = setInterval(() => {

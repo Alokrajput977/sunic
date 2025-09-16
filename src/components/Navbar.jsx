@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className="nav-logo">
           <a href="#home" onClick={closeMenu}>
             <img src={logo} alt="TechSolutions Logo" className="logo-img" />
-            <span className="logo-text">TechSolutions</span>
+            <span className="logo-text">Tech Solutions</span>
           </a>
         </div>
 
@@ -41,6 +41,8 @@ const Navbar = () => {
           <a href="#contact" onClick={closeMenu} className="nav-item">
             <i className="fas fa-envelope"></i> Contact
           </a>
+          <a href="/project" onClick={closeMenu} className="nav-item">
+            <i className="fas fa-user"></i>  Project</a>
         </div>
 
         <div
