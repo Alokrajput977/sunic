@@ -12,6 +12,8 @@ import Footer from "./components/Footer.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import Mainabout from "./components/MainAbout.jsx";
 import MainServices from "./components/MainServices.jsx";
+import MainProduct from "./components/MainProduct.jsx";
+
 import "./App.css";
 
 // Home Page Layout (all sections)
@@ -39,6 +41,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/aboutt" element={< Mainabout/>} />
           <Route path="/services" element={<MainServices/>} />
+          <Route path="/products" element={<MainProduct/>} />
         </Routes>
       </div>
     </Router>

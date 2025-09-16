@@ -14,6 +14,7 @@ const Navbar = () => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+    
   }, []);
 
   // update active item when route changes
@@ -22,6 +23,7 @@ const Navbar = () => {
     else if (location.pathname === "/aboutt") setActiveItem("about");
     else if (location.pathname === "/services") setActiveItem("services");
     else if (location.pathname === "/project") setActiveItem("project");
+    
   }, [location.pathname]);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -59,13 +61,13 @@ const Navbar = () => {
           >
             <i className="fas fa-cogs"></i> Services
           </Link>
-          <a
-            href="#products"
+          <Link
+            to="/products"
             onClick={() => { setActiveItem("products"); closeMenu(); }}
             className={`nav-item ${activeItem === "products" ? "active" : ""}`}
           >
             <i className="fas fa-box-open"></i> Products
-          </a>
+          </Link>
           <a
             href="#contact"
             onClick={() => { setActiveItem("contact"); closeMenu(); }}
