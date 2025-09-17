@@ -15,6 +15,7 @@ const Navbar = () => {
     if (path === "/aboutt") return "about";
     if (path === "/services") return "services";
     if (path === "/products") return "products";
+    if (path === "/contact") return "contact"; // ✅ FIXED
     if (path === "/project") return "project";
     return "";
   };
@@ -31,7 +32,7 @@ const Navbar = () => {
     setActiveItem(getActiveItem(location.pathname));
   }, [location.pathname]);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
   return (
@@ -39,10 +40,10 @@ const Navbar = () => {
       <div className="nav-container">
         {/* Logo */}
         <div className="nav-logo">
-          <a href="#home" onClick={closeMenu}>
+          <Link to="/" onClick={closeMenu}>
             <img src={logo} alt="TechSolutions Logo" className="logo-img" />
             <span className="logo-text">Tech Solutions</span>
-          </a>
+          </Link>
         </div>
 
         {/* Menu */}
@@ -77,10 +78,10 @@ const Navbar = () => {
           </Link>
           <Link
             to="/contact"
-            onClick={() => { setActiveItem("contact"); closeMenu(); }}
+            onClick={closeMenu}
             className={`nav-item ${activeItem === "contact" ? "active" : ""}`}
           >
-            <i className="fas fa-envelope"></i> contact
+            <i className="fas fa-envelope"></i> Contact
           </Link>
           <Link
             to="/project"
