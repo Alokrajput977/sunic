@@ -6,24 +6,29 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeItem, setActiveItem] = useState("home"); // default active
-
   const location = useLocation();
+
+  // derive active item directly from pathname
+  const getActiveItem = (pathname) => {
+    const path = pathname.toLowerCase(); // normalize case
+    if (path === "/") return "home";
+    if (path === "/aboutt") return "about";
+    if (path === "/services") return "services";
+    if (path === "/products") return "products";
+    if (path === "/project") return "project";
+    return "";
+  };
+
+  const [activeItem, setActiveItem] = useState(getActiveItem(location.pathname));
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-    
   }, []);
 
-  // update active item when route changes
   useEffect(() => {
-    if (location.pathname === "/") setActiveItem("home");
-    else if (location.pathname === "/aboutt") setActiveItem("about");
-    else if (location.pathname === "/services") setActiveItem("services");
-    else if (location.pathname === "/project") setActiveItem("project");
-    
+    setActiveItem(getActiveItem(location.pathname));
   }, [location.pathname]);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -32,6 +37,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
+        {/* Logo */}
         <div className="nav-logo">
           <a href="#home" onClick={closeMenu}>
             <img src={logo} alt="TechSolutions Logo" className="logo-img" />
@@ -39,51 +45,53 @@ const Navbar = () => {
           </a>
         </div>
 
+        {/* Menu */}
         <div className={`nav-menu ${isOpen ? "active" : ""}`}>
           <Link
             to="/"
-            onClick={() => { setActiveItem("home"); closeMenu(); }}
+            onClick={closeMenu}
             className={`nav-item ${activeItem === "home" ? "active" : ""}`}
           >
             <i className="fas fa-home"></i> Home
           </Link>
           <Link
             to="/aboutt"
-            onClick={() => { setActiveItem("about"); closeMenu(); }}
+            onClick={closeMenu}
             className={`nav-item ${activeItem === "about" ? "active" : ""}`}
           >
             <i className="fas fa-info-circle"></i> About
           </Link>
           <Link
             to="/services"
-            onClick={() => { setActiveItem("services"); closeMenu(); }}
+            onClick={closeMenu}
             className={`nav-item ${activeItem === "services" ? "active" : ""}`}
           >
             <i className="fas fa-cogs"></i> Services
           </Link>
           <Link
             to="/products"
-            onClick={() => { setActiveItem("products"); closeMenu(); }}
+            onClick={closeMenu}
             className={`nav-item ${activeItem === "products" ? "active" : ""}`}
           >
             <i className="fas fa-box-open"></i> Products
           </Link>
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             onClick={() => { setActiveItem("contact"); closeMenu(); }}
             className={`nav-item ${activeItem === "contact" ? "active" : ""}`}
           >
-            <i className="fas fa-envelope"></i> Contact
-          </a>
+            <i className="fas fa-envelope"></i> contact
+          </Link>
           <Link
             to="/project"
-            onClick={() => { setActiveItem("project"); closeMenu(); }}
+            onClick={closeMenu}
             className={`nav-item ${activeItem === "project" ? "active" : ""}`}
           >
             <i className="fas fa-user"></i> Project
           </Link>
         </div>
 
+        {/* Hamburger */}
         <div
           className={`nav-toggle ${isOpen ? "active" : ""}`}
           onClick={toggleMenu}

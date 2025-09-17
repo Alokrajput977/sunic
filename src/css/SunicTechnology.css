@@ -1,0 +1,462 @@
+/* SunicTechnology.css */
+
+/* Global Styles */
+.sunicTechnologyContainer {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Navigation Styles */
+.sunicNavbar {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.sunicNavContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sunicNavLogo h2 {
+  color: #d32f2f;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.sunicNavMenu {
+  display: flex;
+  gap: 2rem;
+}
+
+.sunicNavLink {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.sunicNavLink:hover {
+  color: #d32f2f;
+}
+
+.sunicHamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.sunicHamburgerBar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+  transition: 0.3s;
+
+}
+
+/* Hero Section */
+.sunicHeroSection {
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 80vh;
+    margin-top: 100px;
+}
+
+.sunicHeroContent {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.sunicHeroTitle {
+  font-size: 3rem;
+  color: #d32f2f;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.sunicHeroDescription {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.sunicHeroButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.sunicButtonPrimary {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sunicButtonPrimary:hover {
+  background-color: #b71c1c;
+}
+
+.sunicButtonSecondary {
+  background-color: transparent;
+  color: #d32f2f;
+  border: 2px solid #d32f2f;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sunicButtonSecondary:hover {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.sunicHeroImage {
+  flex: 1;
+}
+
+.sunicHeroImage img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Header */
+.sunicSectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sunicSectionTitle {
+  font-size: 2.5rem;
+  color: #d32f2f;
+  margin-bottom: 1rem;
+}
+
+.sunicSectionSubtitle {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Services Section */
+.sunicServicesSection {
+  padding: 5rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.sunicServicesTabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.sunicTabButton {
+  background-color: #fff;
+  border: 2px solid #d32f2f;
+  color: #d32f2f;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sunicTabButton:hover {
+  background-color: #ffebee;
+}
+
+.sunicTabButtonActive {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.sunicServiceContent {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sunicServiceDescription {
+  flex: 1;
+}
+
+.sunicServiceDescription h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.sunicServiceFeatures {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.sunicServiceFeatures li {
+  margin-bottom: 0.5rem;
+}
+
+.sunicServiceImage {
+  flex: 1;
+}
+
+.sunicServiceImage img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Projects Section */
+.sunicProjectsSection {
+  padding: 5rem 2rem;
+}
+
+.sunicProjectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sunicProjectCard {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.sunicProjectCard:hover {
+  transform: translateY(-5px);
+}
+
+.sunicProjectImage {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.sunicProjectImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.sunicProjectCard:hover .sunicProjectImage img {
+  transform: scale(1.05);
+}
+
+.sunicProjectOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 1.5rem;
+}
+
+.sunicProjectOverlay h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.sunicProjectOverlay p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* About Section */
+.sunicAboutSection {
+  padding: 5rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.sunicAboutContent {
+  display: flex;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.sunicAboutText {
+  flex: 1;
+}
+
+.sunicAboutText p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.sunicStatsContainer {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.sunicStatItem {
+  text-align: center;
+}
+
+.sunicStatItem h3 {
+  font-size: 2.5rem;
+  color: #d32f2f;
+  margin: 0;
+}
+
+.sunicStatItem p {
+  margin: 0.5rem 0 0 0;
+  font-weight: 600;
+}
+
+.sunicAboutImage {
+  flex: 1;
+}
+
+.sunicAboutImage img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+.sunicContactSection {
+  padding: 5rem 2rem;
+}
+
+.sunicContactContent {
+  display: flex;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sunicContactInfo {
+  flex: 1;
+}
+
+.sunicContactInfo h3 {
+  color: #d32f2f;
+  margin-bottom: 1.5rem;
+}
+
+.sunicContactItem {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.sunicContactForm {
+  flex: 1;
+}
+
+.sunicContactForm h3 {
+  color: #d32f2f;
+  margin-bottom: 1.5rem;
+}
+
+.sunicFormGroup {
+  margin-bottom: 1.5rem;
+}
+
+.sunicFormInput, .sunicFormTextarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.sunicFormTextarea {
+  resize: vertical;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .sunicHeroSection {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .sunicHeroContent {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .sunicServiceContent {
+    flex-direction: column;
+  }
+  
+  .sunicAboutContent {
+    flex-direction: column;
+  }
+  
+  .sunicContactContent {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .sunicNavMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sunicNavMenuActive {
+    display: flex;
+  }
+  
+  .sunicHamburger {
+    display: flex;
+  }
+  
+  .sunicHeroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .sunicServicesTabs {
+    flex-wrap: wrap;
+  }
+  
+  .sunicStatsContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .sunicHeroButtons {
+    flex-direction: column;
+  }
+  
+  .sunicSectionTitle {
+    font-size: 2rem;
+  }
+}

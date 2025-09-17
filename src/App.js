@@ -13,6 +13,7 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 import Mainabout from "./components/MainAbout.jsx";
 import MainServices from "./components/MainServices.jsx";
 import MainProduct from "./components/MainProduct.jsx";
+import ContactPage from "./components/MainContect.jsx";
 
 import "./App.css";
 
@@ -42,6 +43,7 @@ function App() {
           <Route path="/aboutt" element={< Mainabout/>} />
           <Route path="/services" element={<MainServices/>} />
           <Route path="/products" element={<MainProduct/>} />
+          <Route path="/contact" element={<ContactPage/>} />
         </Routes>
       </div>
     </Router>
