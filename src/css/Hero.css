@@ -64,6 +64,7 @@
 .hero-buttons {
   display: flex;
   gap: 1.2rem;
+  margin-top: 50px;
 }
 
 .btn {
@@ -136,8 +137,8 @@
 .train-center {
   transform: scale(1.15) translate(-15px, 40px); 
   z-index: 2; /* Keeps the train traveling in front of the warehouse edges */
-  margin-top: 200px;
-  margin-left: -150px;
+  margin-top: 260px;
+  margin-left: -100px;
 }
 
 .warehouse-right {
@@ -201,5 +202,26 @@
   .train-center,
   .warehouse-right {
     transform: none;
+  }
+}
+
+/* Add this to the very bottom of your existing Hero.css file */
+.hero-feature-text {
+  margin-top: 4rem;
+  max-width: 420px;
+  text-align: left;
+  animation: fadeInUp 1.2s ease;
+}
+
+.hero-feature-text p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+@media screen and (max-width: 960px) {
+  .hero-feature-text {
+    margin: 3rem auto 0;
+    text-align: center;
   }
 }

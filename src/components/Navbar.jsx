@@ -8,14 +8,14 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // derive active item directly from pathname
+  // Derive active item directly from pathname
   const getActiveItem = (pathname) => {
-    const path = pathname.toLowerCase(); // normalize case
+    const path = pathname.toLowerCase();
     if (path === "/") return "home";
     if (path === "/aboutt") return "about";
     if (path === "/services") return "services";
     if (path === "/products") return "products";
-    if (path === "/contact") return "contact"; // ✅ FIXED
+    if (path === "/contact") return "contact"; 
     if (path === "/project") return "project";
     return "";
   };
@@ -38,15 +38,15 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
-        {/* Logo */}
+        {/* Logo Section */}
         <div className="nav-logo">
           <Link to="/" onClick={closeMenu}>
-            <img src={logo} alt="TechSolutions Logo" className="logo-img" />
-            <span className="logo-text">Tech Solutions</span>
+            <img src={logo} alt="Sunic Logo" className="logo-img" />
+            <span className="logo-text">Sunic Tech Solutions <span className="text-dark"></span></span>
           </Link>
         </div>
 
-        {/* Menu */}
+        {/* Navigation Menu */}
         <div className={`nav-menu ${isOpen ? "active" : ""}`}>
           <Link
             to="/"
@@ -77,22 +77,22 @@ const Navbar = () => {
             <i className="fas fa-box-open"></i> Products
           </Link>
           <Link
+            to="/project"
+            onClick={closeMenu}
+            className={`nav-item ${activeItem === "project" ? "active" : ""}`}
+          >
+            <i className="fas fa-project-diagram"></i> Project
+          </Link>
+          <Link
             to="/contact"
             onClick={closeMenu}
             className={`nav-item ${activeItem === "contact" ? "active" : ""}`}
           >
             <i className="fas fa-envelope"></i> Contact
           </Link>
-          <Link
-            to="/project"
-            onClick={closeMenu}
-            className={`nav-item ${activeItem === "project" ? "active" : ""}`}
-          >
-            <i className="fas fa-user"></i> Project
-          </Link>
         </div>
 
-        {/* Hamburger */}
+        {/* Mobile Hamburger Menu Toggle */}
         <div
           className={`nav-toggle ${isOpen ? "active" : ""}`}
           onClick={toggleMenu}

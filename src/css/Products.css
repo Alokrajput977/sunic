@@ -1,86 +1,165 @@
-.products {
-  padding: 5rem 2rem;
-  background: #f9f9f9;
+:root {
+  --orange-main: #ff6b00;
+  --orange-darker: #e05e00;
+  --panel-bg: #fbfbfd;
+  --surface-white: #ffffff;
+  --gray-text-main: #2b2b2b;
+  --gray-text-muted: #626262;
+  --border-tint: #eaecef;
 }
 
+.products {
+  padding: 100px 0;
+  background-color: var(--panel-bg);
+  color: var(--gray-text-main);
+}
+
+.products .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Section Header Layout --- */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header .sub-title {
+  color: var(--orange-main);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--gray-text-main);
+}
+
+.section-header p {
+  color: var(--gray-text-muted);
+  font-size: 1.15rem;
+  max-width: 650px;
+  margin: 1rem auto 0;
+}
+
+/* --- Premium Navigation Filter Buttons --- */
 .product-filters {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .filter-btn {
-  padding: 0.8rem 1.5rem;
-  background: white;
-  border: 2px solid #e0e0e0;
+  padding: 0.75rem 1.8rem;
+  background: var(--surface-white);
+  border: 1px solid var(--border-tint);
   border-radius: 50px;
   font-weight: 600;
-  color: #666;
+  font-size: 0.95rem;
+  color: var(--gray-text-muted);
   cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .filter-btn:hover {
-  border-color: #d32f2f;
-  color: #d32f2f;
+  border-color: var(--orange-main);
+  color: var(--orange-main);
+  transform: translateY(-1px);
 }
 
 .filter-btn.active {
-  background: #d32f2f;
-  border-color: #d32f2f;
-  color: white;
+  background: var(--orange-main);
+  border-color: var(--orange-main);
+  color: var(--surface-white);
+  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.2);
 }
 
+/* --- Products Responsive Grid Layout --- */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2.5rem;
 }
 
+/* --- Re-engineered Card Architecture --- */
 .product-card {
-  background: white;
-  border-radius: 10px;
+  background: var(--surface-white);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  border: 1px solid var(--border-tint);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 107, 0, 0.08);
+  border-color: rgba(255, 107, 0, 0.2);
 }
 
+/* Image Wrapper with Feature Tags */
 .product-image {
   position: relative;
   overflow: hidden;
-  height: 200px;
+  height: 230px;
+  background-color: #f0f2f5;
 }
 
 .product-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.5s ease;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .product-card:hover .product-image img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
+/* Floating Component Tags Feature Added */
+.card-top-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(34, 34, 34, 0.85);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: white;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 50px;
+  z-index: 3;
+  letter-spacing: 0.5px;
+}
+
+/* Overlay Glass Layout */
 .product-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(211, 47, 47, 0.8);
+  background: rgba(255, 107, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: all 0.3s ease;
+  z-index: 2;
+  transition: opacity 0.35s ease;
+  padding: 1.5rem;
 }
 
 .product-card:hover .product-overlay {
@@ -88,51 +167,108 @@
 }
 
 .product-btn {
-  padding: 0.8rem 1.5rem;
-  background: white;
-  color: #d32f2f;
+  padding: 0.8rem 1.6rem;
+  background: var(--surface-white);
+  color: var(--orange-main);
   border: none;
   border-radius: 50px;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 0.9rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 .product-btn:hover {
-  background: #f5f5f5;
-  transform: translateY(-3px);
+  background: var(--surface-white);
+  color: var(--orange-darker);
+  transform: scale(1.04);
 }
 
+/* --- Card Typography Details Layout --- */
 .product-content {
-  padding: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-category-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--orange-main);
+  margin-bottom: 0.5rem;
 }
 
 .product-content h3 {
-  font-size: 1.3rem;
-  color: #333;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gray-text-main);
   margin-bottom: 0.8rem;
 }
 
 .product-content p {
-  color: #666;
-  margin-bottom: 1.5rem;
+  color: var(--gray-text-muted);
+  font-size: 0.98rem;
   line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+/* Bottom Anchor Button Block */
+.card-action-bar {
+  border-top: 1px solid var(--border-tint);
+  padding-top: 1.2rem;
+  margin-top: auto;
 }
 
 .product-link {
-  color: #d32f2f;
+  color: var(--gray-text-main);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 0.95rem;
   display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
   transition: all 0.3s ease;
 }
 
 .product-link i {
-  margin-left: 5px;
-  transition: all 0.3s ease;
+  color: var(--orange-main);
+  transition: transform 0.3s ease;
+}
+
+.product-link:hover {
+  color: var(--orange-main);
 }
 
 .product-link:hover i {
   transform: translateX(5px);
+}
+
+/* --- Responsive Layout Configurations --- */
+@media screen and (max-width: 960px) {
+  .section-header h2 {
+    font-size: 2.4rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .products {
+    padding: 60px 0;
+  }
+  
+  .product-content {
+    padding: 1.5rem;
+  }
 }

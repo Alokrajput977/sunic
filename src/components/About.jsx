@@ -10,14 +10,14 @@ const statsData = [
 
 const About = () => {
   const [counts, setCounts] = useState(statsData.map(() => 0));
-  const [years, setYears] = useState(0); // 👈 for experience badge
+  const [years, setYears] = useState(0);
 
   useEffect(() => {
-    // 🔹 Animate stats counters
+    // Animate stats counters smoothly
     statsData.forEach((stat, index) => {
       let start = 0;
       const end = stat.value;
-      const duration = 13200;
+      const duration = 2000; // Adjusted duration for a faster, snappy feel
       const increment = Math.ceil(end / (duration / 30));
 
       const counter = setInterval(() => {
@@ -34,7 +34,7 @@ const About = () => {
       }, 30);
     });
 
-    // 🔹 Animate years of experience
+    // Animate years of experience
     let startYear = 0;
     const endYear = 13;
     const yearCounter = setInterval(() => {
@@ -44,69 +44,103 @@ const About = () => {
         clearInterval(yearCounter);
       }
       setYears(startYear);
-    }, 80); // speed for years count
-
+    }, 60);
   }, []);
 
   return (
     <section id="about" className="about">
       <div className="container">
         <div className="section-header">
-          <h2>About Us</h2>
-          <p>Learn more about our company and mission</p>
+          <span className="sub-title">Who We Are</span>
+          <h2>About Our Enterprise</h2>
+          <p>Pioneering automated intelligence and cutting-edge location tracking frameworks worldwide.</p>
         </div>
 
         <div className="about-content">
-          <div className="about-image">
+          {/* Left Side: Image with Layout Badge */}
+          <div className="about-image-wrapper">
+            <div className="image-border-effect"></div>
             <img
               src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61"
-              alt="About TechSolutions"
+              alt="Sunic Team working on IT solutions"
             />
             <div className="experience-badge">
-              <span className="years">{years}+</span> {/* 🔥 animated */}
-              <span className="text">Years of Experience</span>
+              <span className="years">{years}+</span>
+              <span className="badge-text">Years of Innovation</span>
             </div>
           </div>
 
-          <div className="about-text">
-            <h3>We Provide Innovative IT Solutions</h3>
+          {/* Right Side: Text & Core Value Propositions */}
+          <div className="about-text-panel">
+            <h3>We Deliver High-Performance Automation & Logistics Infrastructure</h3>
             <p>
-              TechSolutions is a leading provider of IT services and solutions
-              with over a decade of experience in the industry. We specialize in
-              helping businesses leverage technology to achieve their goals and
-              stay ahead of the competition.
+              We specialize in syncing AI deep learning models with terminal ecosystems. 
+              Our platforms turn real-world raw asset data into clean, transparent, operational workflows.
             </p>
 
-            <div className="about-features">
-              <div className="feature">
-                <i className="fas fa-check-circle"></i>
-                <span>Customized solutions for your business needs</span>
+            <div className="about-features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-layer-group"></i>
+                </div>
+                <div className="feature-info">
+                  <h4>Customized AI Architectures</h4>
+                  <p>Engineered precisely around your port, station, or terminal mapping metrics.</p>
+                </div>
               </div>
-              <div className="feature">
-                <i className="fas fa-check-circle"></i>
-                <span>Expert team with certified professionals</span>
+
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-shield-alt"></i>
+                </div>
+                <div className="feature-info">
+                  <h4>Enterprise Security & SLA</h4>
+                  <p>Certified data protection keeping operations resilient and guarded 24/7.</p>
+                </div>
               </div>
-              <div className="feature">
-                <i className="fas fa-check-circle"></i>
-                <span>24/7 support and maintenance services</span>
+
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-network-wired"></i>
+                </div>
+                <div className="feature-info">
+                  <h4>Seamless Terminal Synced API</h4>
+                  <p>Integrates instantly with hardware location tracking configurations seamlessly.</p>
+                </div>
               </div>
-              <div className="feature">
-                <i className="fas fa-check-circle"></i>
-                <span>Cutting-edge technology and methodologies</span>
+
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <i className="fas fa-chart-line"></i>
+                </div>
+                <div className="feature-info">
+                  <h4>Predictive Workflow Analytics</h4>
+                  <p>Spot bottlenecks before they occur with real-world smart tracking forecasts.</p>
+                </div>
               </div>
             </div>
 
-            <a href="#contact" className="btn btn-primary">
-              Get In Touch
+            <a href="#contact" className="btn btn-about-cta">
+              Discover Our Platform <i className="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>
 
-        <div className="stats">
+        {/* Counter Stats Container */}
+        <div className="stats-strip">
           {statsData.map((stat, index) => (
-            <div key={index} className="stat-item">
-              <h4>{counts[index]}+</h4>
-              <p>{stat.label}</p>
+            <div key={index} className="stat-card">
+              <div className="stat-icon-bg">
+                <i className={
+                  index === 0 ? "fas fa-users" :
+                  index === 1 ? "fas fa-check-double" :
+                  index === 2 ? "fas fa-user-shield" : "fas fa-trophy"
+                }></i>
+              </div>
+              <div className="stat-numbers">
+                <h4>{counts[index]}+</h4>
+                <p>{stat.label}</p>
+              </div>
             </div>
           ))}
         </div>
