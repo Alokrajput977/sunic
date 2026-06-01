@@ -2,22 +2,24 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 100px 2rem 2rem;
-  max-width: 1400px;
+  justify-content: space-between;
+  padding: 80px 4rem 2rem;
+  max-width: 1600px; /* Expanded slightly to accommodate the triple composition */
   margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
 
+/* Background decorative accents */
 .hero::before {
   content: '';
   position: absolute;
   top: -10%;
-  right: -10%;
-  width: 500px;
-  height: 500px;
+  right: -5%;
+  width: 650px;
+  height: 650px;
   border-radius: 50%;
-  background: rgba(211, 47, 47, 0.1);
+  background: rgba(255, 107, 0, 0.07);
   z-index: -1;
 }
 
@@ -26,46 +28,46 @@
   position: absolute;
   bottom: -10%;
   left: -10%;
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
   border-radius: 50%;
-  background: rgba(211, 47, 47, 0.05);
+  background: rgba(255, 107, 0, 0.04);
   z-index: -1;
 }
 
 .hero-content {
   flex: 1;
+  max-width: 550px; /* Gives the triple animation panel extra breathing room */
   padding-right: 2rem;
   animation: fadeInUp 1s ease;
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
   line-height: 1.2;
   color: #333;
 }
 
-.text-red {
-  color: #d32f2f;
+.text-orange {
+  color: #ff6b00;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #666;
   margin-bottom: 2.5rem;
   line-height: 1.6;
-  max-width: 600px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .btn {
-  padding: 0.8rem 2rem;
+  padding: 0.9rem 2.2rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
@@ -74,80 +76,72 @@
 }
 
 .btn-primary {
-  background: #d32f2f;
+  background: #ff6b00;
   color: white;
-  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
 .btn-primary:hover {
-  background: #b71c1c;
+  background: #e05e00;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #d32f2f;
-  border: 2px solid #d32f2f;
+  color: #ff6b00;
+  border: 2px solid #ff6b00;
 }
 
 .btn-secondary:hover {
-  background: #d32f2f;
+  background: #ff6b00;
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
 }
 
+/* --- TRIPLE ANIMATION SCENE DESIGN --- */
 .hero-image {
-  flex: 1;
+  flex: 1.6; /* Allocates optimal layout space to display all 3 files */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.animation-scene {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.1fr; /* Harmonizes sizes across the horizon */
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
   position: relative;
-  height: 500px;
 }
 
-.floating-card {
-  position: absolute;
-  background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 180px;
-  animation: float 6s ease-in-out infinite;
-  transition: all 0.3s ease;
+.lottie-block {
+  width: 250%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  transition: transform 0.4s ease;
 }
 
-.floating-card:hover {
+/* Micro-positioning adjustments to create overlapping isometric scale */
+.warehouse-left {
   transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  margin-left: 260px;
+  margin-top: -350px;
 }
 
-.floating-card i {
-  font-size: 2.5rem;
-  color: #d32f2f;
-  margin-bottom: 1rem;
+.train-center {
+  transform: scale(1.15) translate(-15px, 40px); 
+  z-index: 2; /* Keeps the train traveling in front of the warehouse edges */
+  margin-top: 200px;
+  margin-left: -150px;
 }
 
-.floating-card h3 {
-  color: #333;
-  font-size: 1.1rem;
-}
-
-.floating-card:nth-child(1) {
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.floating-card:nth-child(2) {
-  top: 20%;
-  right: 15%;
-  animation-delay: 2s;
-}
-
-.floating-card:nth-child(3) {
-  bottom: 20%;
-  left: 30%;
-  animation-delay: 4s;
+.warehouse-right {
+  transform: translateY(15px);
 }
 
 @keyframes fadeInUp {
@@ -161,15 +155,16 @@
   }
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0px);
+/* Responsive adjustments for tablets and laptops */
+@media screen and (max-width: 1200px) {
+  .hero {
+    padding: 100px 2rem 2rem;
   }
-  50% {
-    transform: translateY(-50px);
+  .hero-title {
+    font-size: 3.2rem;
   }
-  100% {
-    transform: translateY(0px);
+  .train-center {
+    transform: scale(1.1) translate(-100px, 25px);
   }
 }
 
@@ -177,16 +172,13 @@
   .hero {
     flex-direction: column;
     text-align: center;
-    padding-top: 120px;
+    padding: 140px 1.5rem 4rem;
   }
   
   .hero-content {
     padding-right: 0;
-    margin-bottom: 3rem;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    max-width: 100%;
   }
   
   .hero-buttons {
@@ -195,15 +187,19 @@
   
   .hero-image {
     width: 100%;
-    height: 300px;
   }
-  
-  .floating-card {
-    width: 140px;
-    padding: 1rem;
+
+  /* Swaps to a vertical column stack layout on mobile devices */
+  .animation-scene {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 400px;
+    margin: 0 auto;
   }
-  
-  .floating-card i {
-    font-size: 2rem;
+
+  .warehouse-left,
+  .train-center,
+  .warehouse-right {
+    transform: none;
   }
 }

@@ -1,4 +1,7 @@
 import React from "react";
+import Lottie from "lottie-react";
+import warehouseAnim from "./warehouse.json";
+import trainnAnim from "./trainn.json";
 import "../css/Hero.css";
 
 const Hero = () => {
@@ -6,7 +9,7 @@ const Hero = () => {
     <section id="home" className="hero">
       <div className="hero-content">
         <h1 className="hero-title">
-          Innovative <span className="text-red">IT Solutions</span> for Your Business
+          Innovative <span className="text-orange">IT Solutions</span> for Your Business
         </h1>
         <p className="hero-subtitle">
           We provide cutting-edge technology services to help your business grow in the digital age
@@ -20,18 +23,18 @@ const Hero = () => {
           </a>
         </div>
       </div>
+      
       <div className="hero-image">
-        <div className="floating-card">
-          <i className="fas fa-server"></i>
-          <h3>Cloud Services</h3>
-        </div>
-        <div className="floating-card">
-          <i className="fas fa-shield-alt"></i>
-          <h3>Cyber Security</h3>
-        </div>
-        <div className="floating-card">
-          <i className="fas fa-code"></i>
-          <h3>Web Development</h3>
+        <div className="animation-scene">
+          
+          <div className="lottie-block warehouse-left">
+            <Lottie animationData={warehouseAnim} loop={true} autoplay={true} />
+          </div>
+          
+          {/* Center Transit/Train Element */}
+          <div className="lottie-block train-center">
+            <Lottie animationData={trainnAnim} loop={true} autoplay={true} />
+          </div>
         </div>
       </div>
     </section>
