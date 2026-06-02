@@ -2,296 +2,325 @@ import React, { useState } from "react";
 import "../css/ContactPage.css";
 
 const ContactPage = () => {
-  const [showInternshipForm, setShowInternshipForm] = useState(false);
+  const [activeSegment, setActiveSegment] = useState("general"); // 'general' or 'internship'
+  const [showFormNotification, setShowFormNotification] = useState(false);
+
+  // Single, structured form state handler
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    subject: "",
     position: "",
     education: "",
     skills: "",
     experience: "",
-    coverLetter: "",
+    message: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
-    });
+    }));
   };
 
-  const handleSubmit = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-    alert("✅ Thank you for your application! We will contact you soon.");
+
+    // Smooth custom notification trigger
+    setShowFormNotification(true);
+    setTimeout(() => {
+      setShowFormNotification(false);
+    }, 4000);
+
+    // Reset Form Structure safely
     setFormData({
       name: "",
       email: "",
       phone: "",
+      subject: "",
       position: "",
       education: "",
       skills: "",
       experience: "",
-      coverLetter: "",
+      message: "",
     });
-    setShowInternshipForm(false);
   };
 
   return (
-    <div className="contact-page">
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1 className="hero-title">Get in Touch with Sunic Technology</h1>
-          <p className="hero-subtitle">
-            We'd love to hear from you — let's build something amazing together!
-          </p>
+    <div className="sunicContactWrapper">
+      {/* Toast Notification Alert */}
+      {showFormNotification && (
+        <div className="sunicToastAlert">
+          <div className="toastIcon">✓</div>
+          <div className="toastContent">
+            <h4>Transmission Successful</h4>
+            <p>Our engineering matrix group will contact you within 24 business hours.</p>
+          </div>
+        </div>
+      )}
+
+      {/* Hero Header Section */}
+      <section className="sunicContactHero">
+        <div className="heroGlowOverlay"></div>
+        <div className="container">
+          <div className="heroLayoutContent">
+            <span className="heroMiniTag">Global Communication Hub</span>
+            <h1 className="heroHeaderTitle">Connect With Sunic Engineering Labs</h1>
+            <p className="heroHeaderSubtitle">
+              Whether establishing enterprise infrastructure scopes or initiating your professional career within digital spaces—we build systems that matter.
+            </p>
+          </div>
         </div>
       </section>
 
-      <div className="main-container">
-        {/* Contact Information Section */}
-        <section className="contact-section">
-          <div className="section-header">
-            <h2>Contact Information</h2>
-            <p>Reach out to us through any of these channels</p>
-          </div>
+      {/* Main Framework Layout Container */}
+      <div className="container nativeSpacing">
 
-          <div className="contact-cards">
-            <div className="contact-card">
-              <div className="card-icon">
-                <i className="fas fa-map-marker-alt"></i>
+        {/* Core Contact Info Cards Grid */}
+        <section className="sunicInfoGridSection">
+          <div className="contactCardsLayoutGrid">
+
+            <div className="premiumContactCard">
+              <div className="cardIconWrapper">
+                <i className="fas fa-map-marked-alt"></i>
               </div>
-              <h3>Address</h3>
+              <h3>HQ Engineering Labs</h3>
               <p>
                 Tower A, Spaze iTech Park, Unit No-561, Tower-B, B1, 5th Floor,
-                <br />
                 Sohna - Gurgaon Rd, Sector 49, Gurugram, Haryana 122018
               </p>
             </div>
 
-            <div className="contact-card">
-              <div className="card-icon">
-                <i className="fas fa-phone"></i>
+            <div className="premiumContactCard">
+              <div className="cardIconWrapper">
+                <i className="fas fa-phone-alt"></i>
               </div>
-              <h3>Phone</h3>
-              <p>+91-XXXXXXXXXX</p>
+              <h3>Central Routing Pipeline</h3>
+              <p className="highlightText">+91-124-XXXXXXX</p>
+              <p className="subLabel">Mon - Fri, 9:00 AM — 6:00 PM</p>
             </div>
 
-            <div className="contact-card">
-              <div className="card-icon">
-                <i className="fas fa-envelope"></i>
+            <div className="premiumContactCard">
+              <div className="cardIconWrapper">
+                <i className="fas fa-envelope-open-text"></i>
               </div>
-              <h3>Email</h3>
-              <p>info@sunictechnology.com</p>
+              <h3>Secure Communications</h3>
+              <p className="highlightText">info@sunictechnology.com</p>
+              <p className="subLabel">Enterprise Inquiry System</p>
             </div>
 
-            <div className="contact-card">
-              <div className="card-icon">
-                <i className="fas fa-clock"></i>
-              </div>
-              <h3>Business Hours</h3>
-              <p>
-                Mon - Fri: 9:00 AM - 6:00 PM <br />
-                Sat: 10:00 AM - 2:00 PM <br />
-                Sun: Closed
-              </p>
-            </div>
           </div>
         </section>
 
-        {/* Map Section */}
-        <section className="map-section">
-          <div className="section-header">
-            <h2>Find Our Office</h2>
-            <p>Come visit us at our location</p>
-          </div>
-          <div className="map-container">
-            <iframe
-              title="Google Maps"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.419258973492!2d77.04685621508337!3d28.437935182499024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19c95dc76c6f%3A0x72e8cf7edc72b37a!2sSpaze%20iTech%20Park%2C%20Sector%2049%2C%20Gurugram!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
-              width="100%"
-              height="400"
-              style={{ border: 0, borderRadius: "12px" }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
-        </section>
+        {/* Dual-Action Form Interface Segment */}
+        <section className="sunicInteractiveFormSection">
+          <div className="formInterfaceContainer">
 
-        {/* YouTube Section */}
-        <section className="video-section">
-          <div className="section-header">
-            <h2>🎥 Watch Our Introduction</h2>
-            <p>Learn more about Sunic Technology</p>
-          </div>
-          <div className="video-container">
-            <iframe
-              width="100%"
-              height="600"
-              src="https://www.youtube.com/embed/QyhwSYhX09s?si=tHh3RZoE2CaokxZW" 
-              title="Sunic Technology Intro Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{ borderRadius: "12px" }}
-            ></iframe>
-          </div>
-        </section>
+            <div className="formLeftHeroPanel">
+              <span className="panelTag">Communications Framework</span>
+              <h2>How can we assist your business operations today?</h2>
+              <div className="accentSeparatorBar"></div>
+              <p>Toggle your requirements below to either connect with our network specialists or apply for the technology internship syllabus.</p>
 
-        {/* Internship Section */}
-        <section className="internship-section">
-          <div className="section-header">
-            <h2>🚀 Internship Program</h2>
-            <p>
-              Join our dynamic team and gain valuable experience in the tech
-              industry. We offer internships in various domains.
-            </p>
-          </div>
-
-          {!showInternshipForm ? (
-            <div className="internship-cta">
-              <p>
-                Ready to kickstart your career? Apply now for our internship
-                program!
-              </p>
-              <button
-                className="cta-button"
-                onClick={() => setShowInternshipForm(true)}
-              >
-                Apply for Internship
-              </button>
+              {/* Tab Toggles for switching between forms */}
+              <div className="formSegmentToggles">
+                <button
+                  className={`segmentToggleBtn ${activeSegment === "general" ? "activeSegment" : ""}`}
+                  onClick={() => setActiveSegment("general")}
+                >
+                  <i className="fas fa-handshake"></i> General Business Inquiry
+                </button>
+                <button
+                  className={`segmentToggleBtn ${activeSegment === "internship" ? "activeSegment" : ""}`}
+                  onClick={() => setActiveSegment("internship")}
+                >
+                  <i className="fas fa-graduation-cap"></i> Technical Internship Board
+                </button>
+              </div>
             </div>
-          ) : (
-            <div className="form-container">
-              <h3>Internship Application</h3>
-              <form className="internship-form" onSubmit={handleSubmit}>
-                <div className="form-grid">
-                  <div className="form-group">
-                    <label htmlFor="name">Full Name *</label>
+
+            <div className="formRightInputPanel">
+              <form className="sunicMasterForm" onSubmit={handleFormSubmit}>
+                <h3>{activeSegment === "general" ? "Direct Corporate Message" : "Intern Operational Application"}</h3>
+
+                <div className="inputSplitRow">
+                  <div className="sunicFormBlock">
+                    <label>Your Name *</label>
                     <input
                       type="text"
-                      id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
+                      placeholder="e.g. John Doe"
                     />
                   </div>
-
-                  <div className="form-group">
-                    <label htmlFor="email">Email Address *</label>
+                  <div className="sunicFormBlock">
+                    <label>Corporate Email *</label>
                     <input
                       type="email"
-                      id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
+                      placeholder="name@company.com"
                     />
                   </div>
+                </div>
 
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone Number *</label>
+                <div className="inputSplitRow">
+                  <div className="sunicFormBlock">
+                    <label>Phone Number *</label>
                     <input
                       type="tel"
-                      id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
                       required
+                      placeholder="+91 XXXXX XXXXX"
                     />
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="position">Desired Position *</label>
-                    <select
-                      id="position"
-                      name="position"
-                      value={formData.position}
-                      onChange={handleInputChange}
-                      required
-                    >
-                      <option value="">Select a position</option>
-                      <option value="Software Development">
-                        Software Development
-                      </option>
-                      <option value="Data Analysis">Data Analysis</option>
-                      <option value="Digital Marketing">
-                        Digital Marketing
-                      </option>
-                      <option value="UI/UX Design">UI/UX Design</option>
-                      <option value="Quality Assurance">
-                        Quality Assurance
-                      </option>
-                    </select>
-                  </div>
+                  {activeSegment === "general" ? (
+                    <div className="sunicFormBlock">
+                      <label>Inquiry Context *</label>
+                      <input
+                        type="text"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        required
+                        placeholder="e.g. System Infrastructure"
+                      />
+                    </div>
+                  ) : (
+                    <div className="sunicFormBlock">
+                      <label>Target Engineering Domain *</label>
+                      <select
+                        name="position"
+                        value={formData.position}
+                        onChange={handleInputChange}
+                        required
+                      >
+                        <option value="">Select Domain Blueprint</option>
+                        <option value="Software Development">Software Development & Architecture</option>
+                        <option value="Data Analytics">Data Engineering & Analytics</option>
+                        <option value="Digital Marketing">Digital Marketing & Strategy</option>
+                        <option value="UI/UX Design">UI/UX Interface Engineering</option>
+                        <option value="Quality Assurance">Quality Assurance Matrix Testing</option>
+                      </select>
+                    </div>
+                  )}
                 </div>
 
-                <div className="form-group">
-                  <label htmlFor="education">Educational Background *</label>
+                {/* Conditional Fields Based on Selected Tab Segment */}
+                {activeSegment === "internship" && (
+                  <>
+                    <div className="sunicFormBlock">
+                      <label>Academic Profile & Credentials *</label>
+                      <textarea
+                        name="education"
+                        rows="2"
+                        value={formData.education}
+                        onChange={handleInputChange}
+                        required
+                        placeholder="Mention your university, degrees, or current ongoing diploma specifications..."
+                      />
+                    </div>
+                    <div className="sunicFormBlock">
+                      <label>Technical Core Skills *</label>
+                      <textarea
+                        name="skills"
+                        rows="2"
+                        value={formData.skills}
+                        onChange={handleInputChange}
+                        required
+                        placeholder="e.g. React.js, Python, Automation Loops, Node.js..."
+                      />
+                    </div>
+                    <div className="sunicFormBlock">
+                      <label>Historical Experience Summary (Optional)</label>
+                      <textarea
+                        name="experience"
+                        rows="2"
+                        value={formData.experience}
+                        onChange={handleInputChange}
+                        placeholder="List your previous tech internships, freelance tasks, or major independent project rollouts..."
+                      />
+                    </div>
+                  </>
+                )}
+
+                <div className="sunicFormBlock">
+                  <label>{activeSegment === "general" ? "Detailed Project / Inquiry Scope *" : "Cover Letter & Intent Summary *"}</label>
                   <textarea
-                    id="education"
-                    name="education"
-                    value={formData.education}
+                    name={activeSegment === "general" ? "message" : "message"}
+                    rows="4"
+                    value={formData.message}
                     onChange={handleInputChange}
-                    rows="3"
                     required
-                  ></textarea>
+                    placeholder={activeSegment === "general" ? "Outline your software, hardware, or container tracking optimization goals..." : "Explain why you wish to scale your career within Sunic Technology ecosystem labs..."}
+                  />
                 </div>
 
-                <div className="form-group">
-                  <label htmlFor="skills">Technical Skills *</label>
-                  <textarea
-                    id="skills"
-                    name="skills"
-                    value={formData.skills}
-                    onChange={handleInputChange}
-                    rows="3"
-                    required
-                  ></textarea>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="experience">Previous Experience (if any)</label>
-                  <textarea
-                    id="experience"
-                    name="experience"
-                    value={formData.experience}
-                    onChange={handleInputChange}
-                    rows="3"
-                  ></textarea>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="coverLetter">Cover Letter *</label>
-                  <textarea
-                    id="coverLetter"
-                    name="coverLetter"
-                    value={formData.coverLetter}
-                    onChange={handleInputChange}
-                    rows="5"
-                    required
-                  ></textarea>
-                </div>
-
-                <div className="form-actions">
-                  <button type="submit" className="submit-btn">
-                    Submit Application
-                  </button>
-                  <button
-                    type="button"
-                    className="cancel-btn"
-                    onClick={() => setShowInternshipForm(false)}
-                  >
-                    Cancel
-                  </button>
-                </div>
+                <button type="submit" className="sunicSubmitFormButton">
+                  Transmit Operations Data <i className="fas fa-paper-plane"></i>
+                </button>
               </form>
             </div>
-          )}
+
+          </div>
         </section>
+
+        {/* Media Assets Integration Section (Maps & Videos) */}
+        {/* Media Assets Integration Section (Maps & Videos) */}
+        <section className="sunicMediaIntegrationGrid">
+
+          <div className="mediaContentBlock">
+            <div className="mediaHeader">
+              <span className="mediaTag">Operational Telemetry</span>
+              <h2>True Geographical Location</h2>
+              <div className="accentSeparatorBar leftAlign"></div>
+            </div>
+            <div className="iframeOuterShell">
+              {/* UPDATED: Accurate Google Maps Embed URL for Spaze iTech Park, Gurugram */}
+              <iframe
+                title="Sunic Tech HQ Google Maps Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1d3509.1172658807987!2d77.03154867611599!3d28.400609395279644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d22851edc9fff%3A0x6b7fc6f920f7813a!2sSpaze%20iTech%20Park!5e0!3m2!1sen!2sin!4v1717345678901!5m2!1sen!2sin"
+                width="100%"
+                height="380"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+          <div className="mediaContentBlock">
+            <div className="mediaHeader">
+              <span className="mediaTag">Media Ecosystem</span>
+              <h2>Corporate Capabilities Showcase</h2>
+              <div className="accentSeparatorBar leftAlign"></div>
+            </div>
+            <div className="iframeOuterShell">
+              <iframe
+                width="100%"
+                height="380"
+                src="https://www.youtube.com/embed/QyhwSYhX09s?si=tHh3RZoE2CaokxZW"
+                title="Sunic Technology Comprehensive System Tour"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+
+        </section>
+
       </div>
     </div>
   );

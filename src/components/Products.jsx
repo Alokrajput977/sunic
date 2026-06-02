@@ -10,7 +10,7 @@ const Products = () => {
     {
       id: 1,
       image: "https://cdn.pixabay.com/photo/2024/06/03/05/28/ai-generated-8805518_1280.png",
-      title: "ATAI Terminal Dispatcher",
+      title: "Sunic Terminal Dispatcher",
       category: "software",
       badge: "AI Integrated",
       description: "Comprehensive automated terminal control and asset management solution for high-throughput hubs."
@@ -92,7 +92,7 @@ const Products = () => {
                 <img src={product.image} alt={product.title} />
                 <div className="product-overlay">
                   <button className="product-btn">
-                    Technical Specifications <i className="fas fa-file-alt"></i>
+                    Specs <i className="fas fa-file-alt"></i>
                   </button>
                 </div>
               </div>

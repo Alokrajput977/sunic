@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import '../css/SunicTechnology.css';
 import Footer from '../components/Footer';
+
 const SunicTechnology = () => {
   const [activeTab, setActiveTab] = useState('software');
 
-  // animated counters
+  // Animated counters state
   const [projects, setProjects] = useState(0);
   const [clients, setClients] = useState(0);
   const [years, setYears] = useState(0);
 
   useEffect(() => {
-    const duration = 5000; 
-    const steps = 100; 
+    const duration = 2000; // Optimized duration for snappier UI feel
+    const steps = 50; 
     const intervalTime = duration / steps;
 
     const counters = [
@@ -39,53 +40,53 @@ const SunicTechnology = () => {
     {
       id: 'software',
       title: 'Software Solutions',
-      description: 'Custom software development, enterprise applications, and mobile app development tailored to your business needs.',
-      features: ['Web Applications', 'Mobile Apps', 'Cloud Solutions', 'ERP Systems'],
-      image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+      description: 'Engineered for scaling enterprises. We construct responsive, secure web platforms and distributed software environments using modern architectural models designed to streamline your operations.',
+      features: ['Web Applications & Microservices', 'Native & Cross-Platform Mobile Apps', 'Cloud-Native Deployments', 'Custom Enterprise Resource Planning (ERP)'],
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80'
     },
     {
       id: 'hardware',
       title: 'Hardware Infrastructure',
-      description: 'Complete hardware solutions including servers, networking equipment, and specialized hardware for various industries.',
-      features: ['Server Setup', 'Network Infrastructure', 'Hardware Maintenance', 'IoT Devices'],
-      image: 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+      description: 'Future-proof framework setups ensuring complete hardware continuity. From provisioning dense physical architecture to high-performance computing pipelines tailored for maximum system uptime.',
+      features: ['Enterprise Server Deployments', 'Secure Network Switching Architecture', 'Proactive Hardware Maintenance Loops', 'Industrial IoT Ecosystem Integration'],
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80'
     },
     {
       id: 'government',
       title: 'Government Projects',
-      description: 'Expertise in handling large-scale government projects including ICD yard container management systems.',
-      features: ['ICD Yard Management', 'Container Tracking', 'Customs Software', 'Security Systems'],
-      image: 'https://cdn.pixabay.com/photo/2024/05/07/00/42/work-8744593_1280.png'
+      description: 'Trusted tech partnerships handling mission-critical, large-scale public initiatives. Specializing heavily in custom Inland Container Depot (ICD) yard management systems and automated logistical workflows.',
+      features: ['ICD Yard Container Orchestration', 'Real-time Asset Tracking Systems', 'Customs clearance software pipelines', 'High-Perimeter Automated Security Arrays'],
+      image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80'
     },
     {
       id: 'automation',
       title: 'Automation Solutions',
-      description: 'Streamline your operations with our cutting-edge automation websites and applications.',
-      features: ['Process Automation', 'Workflow Management', 'AI Integration', 'Robotic Process Automation'],
-      image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+      description: 'Systematically eliminate repetitive operational friction. We embed artificial intelligence components and custom robotic process software directly into your web applications to accelerate core metrics.',
+      features: ['Intelligent Process Automation (IPA)', 'Adaptive Workflow Management', 'Generative AI & Data Pipelines', 'Robotic Process Automation (RPA) Systems'],
+      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80'
     }
   ];
 
   const projectsData = [
     {
-      title: "ICD Yard Management System",
-      category: "Government Project",
-      image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+      title: "Automated ICD Yard Orchestration",
+      category: "Government Logistics Infrastructure",
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     },
     {
-      title: "Enterprise Resource Planning",
-      category: "Software Solution",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+      title: "Next-Gen Enterprise Cloud ERP Suite",
+      category: "Custom Software Development",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     },
     {
-      title: "Data Center Setup",
-      category: "Hardware Infrastructure",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+      title: "Resilient Tier-3 Core Data Center",
+      category: "Hardware & Network Infrastructure",
+      image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     },
     {
-      title: "Process Automation",
-      category: "Automation Solution",
-      image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+      title: "AI-Powered Warehouse Analytics Dashboard",
+      category: "Intelligent Automation Integration",
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
     }
   ];
 
@@ -93,160 +94,197 @@ const SunicTechnology = () => {
 
   return (
     <div className="sunicTechnologyContainer">
-      {/* Navigation */}
-
-      {/* Hero Section */}
+      {/* 1. Hero Section */}
       <section id="home" className="sunicHeroSection">
-        <div className="sunicHeroContent">
-          <h1 className="sunicHeroTitle">Innovative IT Solutions for the Digital Age</h1>
-          <p className="sunicHeroDescription">
-            Providing cutting-edge hardware, software, and automation solutions with expertise in government projects including ICD yard container management.
-          </p>
-          <div className="sunicHeroButtons">
-            <button className="sunicButtonPrimary">Our Services</button>
-            <button className="sunicButtonSecondary">Contact Us</button>
+        <div className="sunicHeroContainer">
+          <div className="sunicHeroContent">
+            <span className="sunicHeroTag">Enterprise IT Innovation</span>
+            <h1 className="sunicHeroTitle">Architecting Resilient Infrastructure for Global Enterprise</h1>
+            <p className="sunicHeroDescription">
+              Sunic Technology deploys top-tier enterprise software architectures, robust hardware environments, and automated custom systems engineered for heavy-duty logistical tracking and government infrastructure projects.
+            </p>
+            <div className="sunicHeroButtons">
+              <a href="#services" className="sunicButtonPrimary">Explore Services</a>
+              <a href="#contact" className="sunicButtonSecondary">Partner With Us</a>
+            </div>
           </div>
-        </div>
-        <div className="sunicHeroImage">
-          <img src="https://cdn.pixabay.com/photo/2024/04/25/02/23/ai-generated-8718795_1280.png" alt="Sunic Technology Solutions" />
+          <div className="sunicHeroImageFrame">
+            <div className="sunicHeroGlow"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+              alt="Sunic Digital Transformation Hub" 
+            />
+          </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* 2. Services Segment */}
       <section id="services" className="sunicServicesSection">
-        <div className="sunicSectionHeader">
-          <h2 className="sunicSectionTitle">Our Services</h2>
-          <p className="sunicSectionSubtitle">Comprehensive IT solutions tailored to your business needs</p>
-        </div>
-
-        <div className="sunicServicesTabs">
-          {services.map(service => (
-            <button
-              key={service.id}
-              className={`sunicTabButton ${activeTab === service.id ? 'sunicTabButtonActive' : ''}`}
-              onClick={() => setActiveTab(service.id)}
-            >
-              {service.title}
-            </button>
-          ))}
-        </div>
-
-        <div className="sunicServiceContent">
-          <div className="sunicServiceDescription">
-            <h3>{currentService.title}</h3>
-            <p>{currentService.description}</p>
-            <ul className="sunicServiceFeatures">
-              {currentService.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
-              ))}
-            </ul>
-            <button className="sunicButtonPrimary">Learn More</button>
+        <div className="container">
+          <div className="sunicSectionHeader">
+            <span className="sunicSectionTag">Capabilities</span>
+            <h2 className="sunicSectionTitle">Enterprise Services</h2>
+            <div className="sunicTitleBar"></div>
+            <p className="sunicSectionSubtitle">High-performance technical domains tailored for complex industry scales</p>
           </div>
-          <div className="sunicServiceImage">
-            <img src={currentService.image} alt={currentService.title} />
+
+          <div className="sunicServicesTabs">
+            {services.map(service => (
+              <button
+                key={service.id}
+                className={`sunicTabButton ${activeTab === service.id ? 'sunicTabButtonActive' : ''}`}
+                onClick={() => setActiveTab(service.id)}
+              >
+                {service.title}
+              </button>
+            ))}
+          </div>
+
+          <div className="sunicServiceContent">
+            <div className="sunicServiceDescription">
+              <h3>{currentService.title}</h3>
+              <p className="sunicServiceDescText">{currentService.description}</p>
+              <ul className="sunicServiceFeatures">
+                {currentService.features.map((feature, index) => (
+                  <li key={index}>
+                    <span className="sunicCheckIcon">✓</span> {feature}
+                  </li>
+                ))}
+              </ul>
+              <button className="sunicButtonPrimary inline-btn">Request Service Scope</button>
+            </div>
+            <div className="sunicServiceImage">
+              <img src={currentService.image} alt={currentService.title} />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* 3. Projects Showcase Grid */}
       <section id="projects" className="sunicProjectsSection">
-        <div className="sunicSectionHeader">
-          <h2 className="sunicSectionTitle">Our Projects</h2>
-          <p className="sunicSectionSubtitle">Successful implementations across various industries</p>
-        </div>
+        <div className="container">
+          <div className="sunicSectionHeader">
+            <span className="sunicSectionTag">Case Studies</span>
+            <h2 className="sunicSectionTitle">Our Dynamic Projects</h2>
+            <div className="sunicTitleBar"></div>
+            <p className="sunicSectionSubtitle">Proven systems execution across high-reliability environments</p>
+          </div>
 
-        <div className="sunicProjectsGrid">
-          {projectsData.map((project, index) => (
-            <div key={index} className="sunicProjectCard">
-              <div className="sunicProjectImage">
-                <img src={project.image} alt={project.title} />
-                <div className="sunicProjectOverlay">
-                  <h4>{project.title}</h4>
-                  <p>{project.category}</p>
+          <div className="sunicProjectsGrid">
+            {projectsData.map((project, index) => (
+              <div key={index} className="sunicProjectCard">
+                <div className="sunicProjectImage">
+                  <img src={project.image} alt={project.title} />
+                  <div className="sunicProjectOverlay">
+                    <span className="sunicProjCategory">{project.category}</span>
+                    <h4>{project.title}</h4>
+                    <span className="sunicProjLink">View Deployment Framework <i className="fas fa-arrow-right"></i></span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. About & Animated Statistics Matrix */}
+      <section id="about" className="sunicAboutSection">
+        <div className="container">
+          <div className="sunicAboutGrid">
+            <div className="sunicAboutText">
+              <span className="sunicSectionTag text-left">Enterprise Identity</span>
+              <h2 className="sunicSectionTitle text-left">Pioneering Intelligent System Architectures</h2>
+              <div className="sunicTitleBar left-align"></div>
+              <p className="sunicAboutMainPara">
+                Established as an innovative industry leader, Sunic Technology develops complex hardware topologies, resilient software products, and smart digital process automation frameworks.
+              </p>
+              <p className="sunicAboutSubPara">
+                Our distinct area of command rests inside custom government enterprise programs. We are chosen to engineer, configure, and maintain container tracking applications and ICD yards where structural tracking accuracy is non-negotiable.
+              </p>
+              
+              <div className="sunicStatsContainer">
+                <div className="sunicStatItem">
+                  <h3>{projects}+</h3>
+                  <div className="sunicStatBar"></div>
+                  <p>Deployments Formed</p>
+                </div>
+                <div className="sunicStatItem">
+                  <h3>{clients}+</h3>
+                  <div className="sunicStatBar"></div>
+                  <p>Active Enterprise Clients</p>
+                </div>
+                <div className="sunicStatItem">
+                  <h3>{years}+</h3>
+                  <div className="sunicStatBar"></div>
+                  <p>Years Industry Domain</p>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="sunicAboutSection">
-        <div className="sunicSectionHeader">
-          <h2 className="sunicSectionTitle">About Sunic Technology</h2>
-          <p className="sunicSectionSubtitle">Leading the way in IT innovation since 2010</p>
-        </div>
-
-        <div className="sunicAboutContent">
-          <div className="sunicAboutText">
-            <p>
-              Sunic Technology is a premier IT solutions provider specializing in hardware, software, and automation systems. 
-              With extensive experience in handling government projects, including ICD yard container management systems, 
-              we deliver robust and scalable solutions to meet the evolving needs of our clients.
-            </p>
-            <p>
-              Our team of experts is dedicated to providing cutting-edge technology solutions that drive efficiency, 
-              productivity, and growth for businesses of all sizes.
-            </p>
-            <div className="sunicStatsContainer">
-              <div className="sunicStatItem">
-                <h3>{projects}+</h3>
-                <p>Projects Completed</p>
-              </div>
-              <div className="sunicStatItem">
-                <h3>{clients}+</h3>
-                <p>Clients Served</p>
-              </div>
-              <div className="sunicStatItem">
-                <h3>{years}+</h3>
-                <p>Years Experience</p>
+            
+            <div className="sunicAboutImageFrame">
+              <div className="sunicAboutImageCard">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sunic Engineering Strategy Group" />
               </div>
             </div>
           </div>
-          <div className="sunicAboutImage">
-            <img src="https://cdn.pixabay.com/photo/2020/10/21/21/55/man-5674344_1280.png" alt="Sunic Technology Team" />
-          </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* 5. Contact Node Section */}
       <section id="contact" className="sunicContactSection">
-        <div className="sunicSectionHeader">
-          <h2 className="sunicSectionTitle">Get In Touch</h2>
-          <p className="sunicSectionSubtitle">Ready to transform your business with our IT solutions?</p>
-        </div>
+        <div className="container">
+          <div className="sunicContactCard">
+            <div className="sunicContactGrid">
+              <div className="sunicContactInfo">
+                <span className="sunicContactTag">Let's Connect</span>
+                <h3>Initiate Infrastructure Discovery Architecture</h3>
+                <p>Consult with our lead hardware/software engineers to optimize your workflow layers or arrange system scoping panels.</p>
+                
+                <div className="sunicContactDetails">
+                  <div className="sunicDetailItem">
+                    <div className="sunicDetailIcon"><i className="fas fa-envelope"></i></div>
+                    <div>
+                      <span className="detailLabel">Corporate Communications</span>
+                      <span className="detailValue">SunicTechnology@gmail.com</span>
+                    </div>
+                  </div>
+                  <div className="sunicDetailItem">
+                    <div className="sunicDetailIcon"><i className="fas fa-phone-alt"></i></div>
+                    <div>
+                      <span className="detailLabel">Direct Central Routing</span>
+                      <span className="detailValue">+1 (555) 123-4567</span>
+                    </div>
+                  </div>
+                  <div className="sunicDetailItem">
+                    <div className="sunicDetailIcon"><i className="fas fa-map-marker-alt"></i></div>
+                    <div>
+                      <span className="detailLabel">HQ Engineering Labs</span>
+                      <span className="detailValue">Tower A, Spaze iTech Park, Unit No-561, Tower-B, B1, 5th Floor, Sohna - Gurgaon Rd, Sector 49, Gurugram, Haryana 122018</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-        <div className="sunicContactContent">
-          <div className="sunicContactInfo">
-            <h3>Contact Information</h3>
-            <div className="sunicContactItem">
-              <strong>Email:</strong> SunicTechnology@gmail.com
-
-            </div>
-            <div className="sunicContactItem">
-              <strong>Phone:</strong> +1 (555) 123-4567
-            </div>
-            <div className="sunicContactItem">
-              <strong>Address:</strong> Tower A, Spaze iTech Park, Unit No-561, Tower-B, B1, 5th Floor, Sohna - Gurgaon Rd, Sector 49, Gurugram, Haryana 122018
-            </div>
-          </div>
-          <div className="sunicContactForm">
-            <h3>Send us a Message</h3>
-            <form className="sunicForm">
-              <div className="sunicFormGroup">
-                <input type="text" placeholder="Your Name" className="sunicFormInput" />
+              <div className="sunicContactFormWrapper">
+                <h3>Submit Architecture Request</h3>
+                <form className="sunicForm" onSubmit={(e) => e.preventDefault()}>
+                  <div className="sunicFormGroup">
+                    <input type="text" placeholder="Your Name" className="sunicFormInput" required />
+                  </div>
+                  <div className="sunicFormGroup">
+                    <input type="email" placeholder="Your Corporate Email" className="sunicFormInput" required />
+                  </div>
+                  <div className="sunicFormGroup">
+                    <textarea placeholder="Describe your software, hardware, or automation system performance needs..." className="sunicFormTextarea" rows="4" required></textarea>
+                  </div>
+                  <button type="submit" className="sunicFormSubmitBtn">Transmit Inquiry <i className="fas fa-paper-plane"></i></button>
+                </form>
               </div>
-              <div className="sunicFormGroup">
-                <input type="email" placeholder="Your Email" className="sunicFormInput" />
-              </div>
-              <div className="sunicFormGroup">
-                <textarea placeholder="Your Message" className="sunicFormTextarea" rows="5"></textarea>
-              </div>
-              <button type="submit" className="sunicButtonPrimary">Send Message</button>
-            </form>
+            </div>
           </div>
         </div>
       </section>
+      
       <Footer />
     </div>
   );

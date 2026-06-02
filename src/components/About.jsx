@@ -17,7 +17,7 @@ const About = () => {
     statsData.forEach((stat, index) => {
       let start = 0;
       const end = stat.value;
-      const duration = 2000; // Adjusted duration for a faster, snappy feel
+      const duration = 8000; // Adjusted duration for a faster, snappy feel
       const increment = Math.ceil(end / (duration / 30));
 
       const counter = setInterval(() => {
@@ -36,7 +36,7 @@ const About = () => {
 
     // Animate years of experience
     let startYear = 0;
-    const endYear = 13;
+    const endYear = 15;
     const yearCounter = setInterval(() => {
       startYear += 1;
       if (startYear >= endYear) {
@@ -57,12 +57,12 @@ const About = () => {
         </div>
 
         <div className="about-content">
-          {/* Left Side: Image with Layout Badge */}
+          {/* Left Side: Contextual Automation Image with Layout Badge */}
           <div className="about-image-wrapper">
             <div className="image-border-effect"></div>
             <img
-              src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61"
-              alt="Sunic Team working on IT solutions"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
+              alt="Automated logistics telemetry systems and data control deck"
             />
             <div className="experience-badge">
               <span className="years">{years}+</span>

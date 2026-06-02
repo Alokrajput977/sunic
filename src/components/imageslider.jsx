@@ -5,6 +5,7 @@ const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [direction, setDirection] = useState('next'); // tracks animation swing direction
 
   const slides = [
     {
@@ -44,7 +45,6 @@ const ImageSlider = () => {
     }
   ];
 
-  // Logic for Auto sliding and syncing progress animation
   useEffect(() => {
     let timer;
     let progressTimer;
@@ -52,13 +52,13 @@ const ImageSlider = () => {
     if (!isHovered) {
       setProgress(0);
       
-      // Smoothly update the progress bar indicator
       progressTimer = setInterval(() => {
         setProgress((prev) => (prev >= 100 ? 0 : prev + 2));
       }, 100);
 
       timer = setInterval(() => {
-        goToNext();
+        setDirection('next');
+        setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
       }, 5000);
     }
 
@@ -66,16 +66,21 @@ const ImageSlider = () => {
       clearInterval(timer);
       clearInterval(progressTimer);
     };
-  }, [currentIndex, isHovered]);
+  }, [currentIndex, isHovered, slides.length]);
+
+  const handleNav = (targetIndex) => {
+    setDirection(targetIndex > currentIndex ? 'next' : 'prev');
+    setCurrentIndex(targetIndex);
+  };
 
   const goToPrevious = () => {
-    const isFirstSlide = currentIndex === 0;
-    setCurrentIndex(isFirstSlide ? slides.length - 1 : currentIndex - 1);
+    setDirection('prev');
+    setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
   const goToNext = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    setCurrentIndex(isLastSlide ? 0 : currentIndex + 1);
+    setDirection('next');
+    setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
   return (
@@ -86,37 +91,49 @@ const ImageSlider = () => {
       </div>
 
       <div 
-        className="slider"
+        className="slider-scene"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Progress Bar Component Indicator */}
+        {/* Dynamic Running Progress Bar Indicator */}
         <div 
           className="slider-progress-bar" 
-          style={{ width: `${isHovered ? progress : progress}%` }}
+          style={{ width: `${progress}%` }}
         ></div>
 
-        <div className="slide">
-          <a href={slides[currentIndex].link} className="slide-link">
-            <div 
-              className="slide-image"
-              style={{ backgroundImage: `url(${slides[currentIndex].image})` }}
-            ></div>
-            
-            <div className="slide-overlay">
-              <div className="slide-content">
-                <span className="slide-badge">System Live</span>
-                <h3 className="slide-title-text">{slides[currentIndex].title}</h3>
-                <p className="slide-description">{slides[currentIndex].description}</p>
-                <button className="slide-button">
-                  Examine Architecture <i className="fas fa-arrow-right"></i>
-                </button>
+        {/* 3D Stack View Wrapper Container */}
+        <div className={`slider-3d-viewport ${direction}`}>
+          {slides.map((slide, index) => {
+            let positionClass = "slide-inactive";
+            if (index === currentIndex) positionClass = "slide-active";
+            else if (index === (currentIndex - 1 + slides.length) % slides.length) positionClass = "slide-prev-stack";
+            else if (index === (currentIndex + 1) % slides.length) positionClass = "slide-next-stack";
+
+            return (
+              <div key={slide.id} className={`slide-card-3d ${positionClass}`}>
+                <a href={slide.link} className="slide-link">
+                  <div 
+                    className="slide-image"
+                    style={{ backgroundImage: `url(${slide.image})` }}
+                  ></div>
+                  
+                  <div className="slide-overlay">
+                    <div className="slide-content">
+                      <span className="slide-badge">System Live</span>
+                      <h3 className="slide-title-text">{slide.title}</h3>
+                      <p className="slide-description">{slide.description}</p>
+                      <button className="slide-button">
+                        Examine Architecture <i className="fas fa-arrow-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </a>
               </div>
-            </div>
-          </a>
+            );
+          })}
         </div>
         
-        {/* Navigation Arrows */}
+        {/* Sleek Floating Arrow Controllers */}
         <div className="slider-arrows">
           <button className="arrow left-arrow" onClick={goToPrevious} aria-label="Previous Slide">
             <i className="fas fa-chevron-left"></i>
@@ -126,13 +143,13 @@ const ImageSlider = () => {
           </button>
         </div>
         
-        {/* Nav Circles Line */}
+        {/* Nav Progress Micro Dots */}
         <div className="slider-dots">
           {slides.map((_, slideIndex) => (
             <button
               key={slideIndex}
               className={`dot ${slideIndex === currentIndex ? 'active' : ''}`}
-              onClick={() => setCurrentIndex(slideIndex)}
+              onClick={() => handleNav(slideIndex)}
               aria-label={`Go to slide ${slideIndex + 1}`}
             >
               <span></span>

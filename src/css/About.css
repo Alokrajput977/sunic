@@ -203,91 +203,129 @@
   transform: translateY(-3px);
   box-shadow: 0 8px 22px rgba(255, 107, 0, 0.3);
 }
-
-/* --- Counter Row Strip --- */
+/* ==========================================================================
+   REFINED COUNTER STATS STRIP (Sleek Horizontal Layout)
+   ========================================================================== */
 .stats-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; /* Clean white backdrop */
+  border: 1px solid #f0f0f2; /* Ultra-thin, soft border */
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.03); /* Soft, premium ambient shadow */
+  margin-top: 50px;
 }
 
 .stat-card {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  padding: 2rem;
-  background: var(--card-bg);
-  border: 1px solid #eeeff2;
-  border-radius: 16px;
-  transition: all 0.3s ease;
+  gap: 16px;
+  flex: 1;
+  justify-content: center;
+  position: relative;
 }
 
-.stat-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 107, 0, 0.3);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+/* Elegant vertical divider lines between numbers (except the last one) */
+.stat-card:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background-color: #eaeaea;
 }
 
+/* Circular Icon Container */
 .stat-icon-bg {
-  width: 55px;
-  height: 55px;
-  background: var(--accent-light-orange);
-  color: var(--brand-orange);
+  width: 48px;
+  height: 48px;
+  background-color: #fff5ed; /* Extremely soft theme tint */
+  color: #ff6b00; /* Vibrant accent orange */
+  font-size: 1.15rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Side-by-side layout for text instead of stacked massive elements */
+.stat-numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .stat-numbers h4 {
-  font-size: 2.2rem;
+  font-size: 2rem; /* Clean, prominent font scaling */
   font-weight: 800;
-  color: var(--text-dark);
+  color: #111111;
+  margin: 0;
   line-height: 1.1;
-  margin-bottom: 0.2rem;
+  letter-spacing: -0.02em;
 }
 
 .stat-numbers p {
-  color: var(--text-gray);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 500;
-  margin: 0;
+  color: #666666;
+  margin: 4px 0 0 0;
+  text-transform: uppercase; /* Clean professional tracking */
+  letter-spacing: 0.05em;
 }
 
-/* --- Animations --- */
-@keyframes pulseAnimation {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.03); }
-  100% { transform: scale(1); }
+/* Micro-Interaction Hover effect */
+.stat-card:hover .stat-icon-bg {
+  transform: scale(1.05);
+  background-color: #ff6b00;
+  color: #ffffff;
 }
 
-/* --- Responsive Media Viewports --- */
-@media screen and (max-width: 1140px) {
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 4rem;
-  }
-  .about-image-wrapper {
-    max-width: 600px;
-    margin: 0 auto;
-  }
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media screen and (max-width: 992px) {
   .stats-strip {
-    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 20px;
+  }
+  
+  .stat-numbers h4 {
+    font-size: 1.6rem;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .section-header h2 { font-size: 2.4rem; }
-  .about-text-panel h3 { font-size: 1.8rem; }
-  .about-features-grid { grid-template-columns: 1fr; }
-  .experience-badge { right: -10px; bottom: -10px; padding: 1rem; }
-  .experience-badge .years { font-size: 2.2rem; }
+  .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 Grid setup on tablet views */
+    gap: 30px 10px;
+    padding: 40px 20px;
+  }
+
+  .stat-card {
+    justify-content: flex-start;
+    padding-left: 15%;
+  }
+
+  /* Hide vertical lines on mobile layout */
+  .stat-card:not(:last-child)::after {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .stats-strip {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Clean single vertical column flow on phones */
+    gap: 24px;
+    padding: 30px 24px;
+  }
+
+  .stat-card {
+    padding-left: 0;
+    justify-content: flex-start;
   }
 }

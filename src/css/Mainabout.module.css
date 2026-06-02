@@ -1,47 +1,136 @@
-/* About Page Styles with Red Theme */
-.aboutPage {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  line-height: 1.6;
+:root {
+  --am-orange: #ff6b00;
+  --am-orange-deep: #e05e00;
+  --am-white: #ffffff;
+  --am-bg-soft: #fcfcfd;
+  --am-bg-pure: #ffffff;
+  --am-text-dark: #111111;
+  --am-text-muted: #555555;
+  --am-text-low: #888888;
+  --am-border: #eaecef;
 }
 
-/* Hero Section */
+/* Base structural layout container wrapping */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.aboutPage {
+  background-color: var(--am-bg-soft);
+  color: var(--am-text-dark);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Global Section Component Badges */
+.sectionBadge {
+  color: var(--am-orange);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
 .aboutHero {
-  color: white;
-  padding: 120px 0 80px;
+  background: var(--am-bg-pure);
+  padding: 140px 0 80px 0;
   text-align: center;
+  border-bottom: 1px solid var(--am-border);
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.heroSub {
+  color: var(--am-orange);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .heroContent h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 3.6rem;
+  font-weight: 900;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.heroContent .highlight {
+  color: var(--am-orange);
 }
 
 .heroContent p {
-  font-size: 1.5rem;
-  max-width: 800px;
-  margin: 0 auto;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--am-text-muted);
+  font-weight: 400;
+  margin: 0;
 }
 
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* ==========================================================================
+   METRICS BANNER BAR
+   ========================================================================== */
+.metricBanner {
+  background-color: var(--am-bg-pure);
+  padding: 30px 0;
+  border-bottom: 1px solid var(--am-border);
 }
 
-/* Company Overview */
+.metricGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.metricCard {
+  padding: 1rem;
+}
+
+.metricNumber {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--am-orange);
+  display: block;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.metricLabel {
+  font-size: 0.9rem;
+  color: var(--am-text-muted);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   COMPANY STORY OVERVIEW
+   ========================================================================== */
 .companyOverview {
-  padding: 80px 0;
-  background-color: #fff;
+  padding: 120px 0;
+  background-color: var(--am-bg-soft);
 }
 
 .overviewContent {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 5rem;
+  justify-content: space-between;
 }
 
 .overviewText {
@@ -49,338 +138,421 @@
 }
 
 .overviewText h2 {
-  font-size: 2.5rem;
-  color: #d32f2f;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.overviewText h2:after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background-color: #d32f2f;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.02em;
 }
 
 .overviewText p {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--am-text-muted);
+  margin: 0 0 1.5rem 0;
+}
+
+.overviewText p:last-child {
+  margin-bottom: 0;
+}
+
+.overviewImageWrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.imageBackingBox {
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed var(--am-orange);
+  border-radius: 16px;
+  z-index: 1;
+  max-width: 500px;
 }
 
 .overviewImage {
-  flex: 1;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.overviewImage img {
   width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.overviewImage img:hover {
-  transform: scale(1.03);
-}
-
-/* Leadership Section */
-.leadership {
-  padding: 80px 0;
-  background-color: #f9f9f9;
-}
-
-.leadership h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #d32f2f;
-  margin-bottom: 50px;
+  max-width: 500px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 16px;
+  z-index: 2;
   position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+/* ==========================================================================
+   OUR MANIFESTO SECTION (Refined Orange Theme Variant)
+   ========================================================================== */
+.manifestoSection {
+  background-color: #fffbf7; /* Subtle clean warm-orange background tint */
+  padding: 100px 0;
+  border-top: 1px solid #f3e6dc;
+  border-bottom: 1px solid #f3e6dc;
 }
 
-.leadership h2:after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background-color: #d32f2f;
+.manifestoHeader {
+  max-width: 850px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
 }
 
-.leaderProfile {
+.manifestoHeader h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--am-text-dark);
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.manifestoHeader p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--am-text-muted);
+  margin: 0;
+}
+
+/* Horizontal 2-Column Grid matching image_fdf6ff.png */
+.manifestoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* Premium White Card with subtle bottom Orange gradient edge */
+.manifestoCard {
+  background-color: var(--am-white);
+  border: 1px solid #eedfd4;
+  padding: 2rem;
+  border-radius: 14px;
   display: flex;
-  gap: 50px;
-  align-items: center;
-  background: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-}
-
-.leaderImage {
-  flex: 1;
-  max-width: 350px;
-}
-
-.leaderImage img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.leaderDetails {
-  flex: 2;
-}
-
-.leaderDetails h3 {
-  font-size: 2rem;
-  color: #d32f2f;
-  margin-bottom: 5px;
-}
-
-.leaderTitle {
-  color: #777;
-  font-style: italic;
-  margin-bottom: 20px;
-}
-
-.leaderDetails p {
-  margin-bottom: 15px;
-  line-height: 1.8;
-}
-
-/* Services Section */
-.services {
-  padding: 80px 0;
-  background-color: #fff;
-}
-
-.services h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #d32f2f;
-  margin-bottom: 50px;
+  align-items: flex-start;
+  gap: 1.5rem;
+  box-shadow: 0 4px 20px rgba(255, 107, 0, 0.02);
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
+  overflow: hidden;
 }
 
-.services h2:after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background-color: #d32f2f;
+/* The Left Side Icon Box styling */
+.manifestoIconZone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b00; /* Core Theme Orange */
+  background-color: #fff0e6; /* Soft orange micro-badge background */
+  padding: 0.8rem;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.manifestoIconZone svg {
+  stroke: #ff6b00;
+}
+
+/* Content Container Side */
+.manifestoContent {
+  flex: 1;
+}
+
+.manifestoCard h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--am-text-dark);
+  margin: 0 0 0.5rem 0;
+}
+
+.manifestoCard p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--am-text-muted);
+  margin: 0;
+}
+
+/* Premium Hover Transitions */
+.manifestoCard:hover {
+  transform: translateY(-4px);
+  border-color: #ff6b00;
+  box-shadow: 0 12px 30px rgba(255, 107, 0, 0.08);
+}
+
+.manifestoCard:hover .manifestoIconZone {
+  background-color: #ff6b00;
+  color: var(--am-white);
+}
+
+.manifestoCard:hover .manifestoIconZone svg {
+  stroke: var(--am-white);
+}
+
+/* Responsive adjustments for mobile phone viewports */
+@media screen and (max-width: 992px) {
+  .manifestoGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .manifestoCard {
+    flex-direction: column;
+    align-items: fill;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  .manifestoHeader h2 {
+    font-size: 2rem;
+  }
+}
+/* ==========================================================================
+   TECHNICAL EXPERTISE GRID
+   ========================================================================== */
+.services {
+  padding: 120px 0;
+  background-color: var(--am-bg-soft);
+}
+
+.servicesHeader {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.servicesHeader h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 0;
 }
 
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
 .serviceCard {
-  background: #f9f9f9;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-top: 5px solid #d32f2f;
-}
-
-.serviceCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  background-color: var(--am-bg-pure);
+  border: 1px solid var(--am-border);
+  padding: 3rem 2.2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
 }
 
 .serviceIcon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
-  background-color: #ffebee;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.serviceIcon img {
-  width: 50px;
-  height: 50px;
+  font-size: 2rem;
+  color: var(--am-orange);
+  margin-bottom: 1.5rem;
 }
 
 .serviceCard h3 {
-  font-size: 1.5rem;
-  color: #d32f2f;
-  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
 }
 
 .serviceCard p {
-  line-height: 1.7;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--am-text-muted);
+  margin: 0;
 }
 
-/* Values Section */
-.values {
-  padding: 80px 0;
-  background-color: #f9f9f9;
+/* ==========================================================================
+   LEADERSHIP PROFILE
+   ========================================================================== */
+.leadership {
+  padding: 120px 0;
+  background-color: var(--am-bg-pure);
+  border-top: 1px solid var(--am-border);
 }
 
-.values h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #d32f2f;
-  margin-bottom: 50px;
+.leadershipHeader {
+  margin-bottom: 4rem;
+}
+
+.leadershipHeader h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.leaderProfile {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  background-color: var(--am-bg-soft);
+  padding: 4rem;
+  border-radius: 24px;
+  border: 1px solid var(--am-border);
+}
+
+.leaderImageWrapper {
   position: relative;
 }
 
-.values h2:after {
-  content: '';
+.leaderGraphicBacking {
   position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background-color: #d32f2f;
-}
-
-.valuesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.valueItem {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.valueItem:hover {
-  transform: translateY(-5px);
-}
-
-.valueNumber {
-  width: 50px;
-  height: 50px;
-  background-color: #d32f2f;
-  color: white;
+  top: -15px;
+  left: -15px;
+  width: 180px;
+  height: 180px;
+  background-color: rgba(255, 107, 0, 0.1);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0 auto 20px;
+  z-index: 1;
 }
 
-.valueItem h3 {
-  font-size: 1.5rem;
-  color: #d32f2f;
-  margin-bottom: 15px;
+.leaderImage {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border: 4px solid var(--am-white);
 }
 
-.valueItem p {
-  line-height: 1.7;
+.leaderDetails {
+  flex: 1;
 }
 
-/* CTA Section */
+.leaderDetails h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0 0 0.25rem 0;
+}
+
+.leaderTitle {
+  color: var(--am-orange);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 1.5rem 0;
+}
+
+.leaderDetails p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--am-text-muted);
+  margin: 0 0 1rem 0;
+}
+
+.leaderDetails p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   CALL TO ACTION (CTA)
+   ========================================================================== */
 .aboutCta {
-  padding: 80px 0;
-  color: white;
+  background: linear-gradient(135deg, #111111 0%, #222222 100%);
+  color: var(--am-white);
   text-align: center;
+  padding: 100px 0;
 }
 
 .aboutCta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
 }
 
 .aboutCta p {
   font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 30px;
+  color: #aaaaaa;
+  margin: 0 0 2.5rem 0;
 }
 
 .ctaButton {
-  background-color: #d32f2f;
-  color: white;
+  background-color: var(--am-orange);
+  color: var(--am-white);
   border: none;
-  padding: 15px 40px;
-  font-size: 1.1rem;
+  padding: 1.1rem 2.4rem;
+  font-size: 1rem;
+  font-weight: 700;
   border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+}
+
+.ctaButton i {
+  transition: transform 0.25s ease;
 }
 
 .ctaButton:hover {
-  background-color: #b71c1c;
-  transform: translateY(-3px);
+  background-color: var(--am-orange-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-  .overviewContent {
-    flex-direction: column;
-  }
+.ctaButton:hover i {
+  transform: translateX(4px);
+}
 
-  .leaderProfile {
+/* ==========================================================================
+   MEDIA QUERIES (FLUID RESPONSIVENESS)
+   ========================================================================== */
+@media screen and (max-width: 1100px) {
+  .overviewContent, .leaderProfile {
     flex-direction: column;
+    gap: 3rem;
     text-align: center;
   }
+  
+  .overviewText, .leaderDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-  .leaderImage {
-    max-width: 100%;
+  .imageBackingBox {
+    right: 0;
+    top: 15px;
+  }
+
+  .manifestoGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
-  .heroContent h1 {
-    font-size: 2.2rem;
+@media screen and (max-width: 768px) {
+  .heroContent h1 { font-size: 2.8rem; }
+  .heroContent p { font-size: 1.1rem; }
+  
+  .metricGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
-  .heroContent p {
-    font-size: 1.2rem;
-  }
-
-  .overviewText h2,
-  .leadership h2,
-  .services h2,
-  .values h2 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .aboutHero {
-    padding: 100px 0 60px;
-  }
-
-  .companyOverview,
-  .leadership,
-  .services,
-  .values,
-  .aboutCta {
-    padding: 60px 0;
+  .servicesGrid {
+    grid-template-columns: 1fr;
   }
 
   .leaderProfile {
-    padding: 20px;
+    padding: 2.5rem;
   }
+  
+  .aboutCta h2 { font-size: 2rem; }
+  .aboutCta p { font-size: 1rem; }
+}
 
-  .serviceCard,
-  .valueItem {
-    padding: 20px;
-  }
+@media screen and (max-width: 480px) {
+  .heroContent h1 { font-size: 2.2rem; }
+  .metricGrid { grid-template-columns: 1fr; }
+  .overviewText h2, .manifestoHeader h2, .servicesHeader h2, .leadershipHeader h2 { font-size: 1.8rem; }
+  .overviewImage { height: 260px; }
 }

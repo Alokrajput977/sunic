@@ -9,191 +9,170 @@
   --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 20px 40px rgba(255, 107, 0, 0.12);
 }
-
+/* ==========================================================================
+   PREMIUM COMPACT SERVICES ECOSYSTEM
+   ========================================================================== */
 .services {
   padding: 100px 0;
-  background-color: var(--bg-white);
-  font-family: inherit;
-  color: var(--text-primary);
+  background-color: #fcfcfd; /* Ultra-clean light gray backdrop */
 }
 
 .services .container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 24px;
 }
 
-/* --- Section Header Layout --- */
-.section-header {
+/* Compact Header */
+.services .section-header {
   text-align: center;
-  margin-bottom: 5rem;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
 }
 
-.section-header .sub-title {
-  color: var(--primary-orange);
-  font-size: 0.95rem;
+.services .sub-title {
+  color: #ff6b00; /* Core Theme Orange */
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
 }
 
-.section-header h2 {
-  font-size: 3rem;
+.services .section-header h2 {
+  font-size: 2.2rem;
   font-weight: 800;
-  color: var(--text-primary);
-  margin-bottom: 1.2rem;
+  color: #111111;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
 }
 
-.section-header p {
-  color: var(--text-secondary);
-  font-size: 1.15rem;
-  max-width: 600px;
-  margin: 0 auto;
+.services .section-header p {
+  color: #666666;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* --- Services Grid System --- */
+/* 3-Column Tight Micro-Grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Tighter gap to keep it small and snappy */
 }
 
-/* --- Premium Interactive Service Cards --- */
+/* Sleek Dashboard-Style Service Card */
 .service-card {
-  background: var(--bg-soft);
-  border: 1px solid var(--border-light);
-  border-radius: 16px;
-  padding: 3rem 2.5rem;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 24px; /* Reduced padding to dramatically lower overall card scale */
   position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-              border-color 0.4s ease;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
 }
 
-/* Elegant sliding orange accent block */
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background: linear-gradient(135deg, var(--primary-orange), var(--dark-orange));
-  z-index: -1;
-  transition: height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--primary-orange);
-  box-shadow: var(--shadow-md);
-}
-
-.service-card:hover::before {
-  height: 100%;
-}
-
-/* --- Typography & Elements Inside Card --- */
+/* Left-Aligned Micro Horizontal Flow */
 .card-inner-content {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  align-items: flex-start; /* Keeps text snug on the left */
+  text-align: left;
 }
 
+/* Tiny, Beautiful Minimal Badge */
 .service-icon {
-  width: 65px;
-  height: 65px;
-  background: rgba(255, 107, 0, 0.08);
-  border-radius: 12px;
+  width: 42px;
+  height: 42px;
+  background-color: #fff5ed; /* Extremely soft theme orange tint */
+  color: #ff6b00;
+  font-size: 1.1rem;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
-  transition: all 0.4s ease;
-}
-
-.service-icon i {
-  font-size: 1.6rem;
-  color: var(--primary-orange);
-  transition: all 0.4s ease;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
 }
 
 .service-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.15rem; /* Compact title font scale */
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-  transition: color 0.3s ease;
+  color: #111111;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.01em;
 }
 
 .service-card p {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  flex-grow: 1;
-  transition: color 0.3s ease;
+  font-size: 0.9rem; /* Snug, clean paragraph font scale */
+  line-height: 1.5;
+  color: #555555;
+  margin: 0 0 16px 0;
 }
 
+/* Text link inline transition line */
 .service-link {
-  color: var(--primary-orange);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ff6b00;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  transition: color 0.3s ease, gap 0.3s ease;
-  width: max-content;
+  gap: 6px;
+  margin-top: auto; /* Automatically forces the link to line up at the bottom */
+  transition: color 0.2s ease;
 }
 
 .service-link i {
-  font-size: 0.8rem;
-  transition: transform 0.3s ease;
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
 }
 
-/* --- Card Hover Text Transformations --- */
-.service-card:hover h3,
-.service-card:hover p,
-.service-card:hover .service-link {
-  color: var(--bg-white);
+/* Premium Hover State Interactions */
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: #ff6b00; /* Pops your branding color */
+  box-shadow: 0 12px 30px rgba(255, 107, 0, 0.06);
 }
 
 .service-card:hover .service-icon {
-  background: rgba(255, 255, 255, 0.2);
+  background-color: #ff6b00;
+  color: #ffffff;
 }
 
-.service-card:hover .service-icon i {
-  color: var(--bg-white);
-  transform: rotateY(180deg);
+.service-card:hover .service-link {
+  color: #e05e00;
 }
 
 .service-card:hover .service-link i {
-  transform: translateX(4px);
+  transform: translateX(3px); /* Micro nudge forward */
 }
 
-/* --- Responsive Media Viewports --- */
-@media screen and (max-width: 960px) {
-  .section-header h2 {
-    font-size: 2.4rem;
+/* ==========================================================================
+   FLUID RESPONSIVENESS (No layout breaks)
+   ========================================================================== */
+@media screen and (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* Snaps to 2 columns on tablets */
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .services {
+    padding: 60px 0;
   }
   
+  .services .section-header h2 {
+    font-size: 1.8rem;
+  }
+
   .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr; /* Snaps to a single column flow on phone views */
+    gap: 16px;
   }
   
   .service-card {
-    padding: 2.5rem 1.8rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .services {
-    padding: 60px 0;
+    padding: 20px;
   }
 }
