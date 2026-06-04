@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../css/ContactPage.css";
-
+import Footer from "../components/Footer"
 const ContactPage = () => {
   const [activeSegment, setActiveSegment] = useState("general"); // 'general' or 'internship'
   const [showFormNotification, setShowFormNotification] = useState(false);
@@ -320,6 +320,7 @@ const ContactPage = () => {
           </div>
 
         </section>
+        <Footer/>
 
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import "../css/CareersPage.css";
+import Footer from "../components/Footer"
 
 const CareersPage = () => {
   const [selectedJob, setSelectedJob] = useState(null);
@@ -368,8 +369,10 @@ const CareersPage = () => {
           </div>
         </div>
       )}
+       <Footer/>
 
     </div>
+    
   );
 };
 
