@@ -1,0 +1,593 @@
+/* ==========================================================================
+   CAREERS DASHBOARD CSS THEME VARIABLES
+   ========================================================================== */
+:root {
+    --sunic-orange: #ff6b00;
+    --sunic-orange-hover: #e05e00;
+    --sunic-white: #ffffff;
+    --sunic-grey-bg: #f8f9fa;
+    --sunic-dark-slate: #141518;
+    --sunic-dark-card: #1c1d22;
+    --sunic-txt-dark: #1e2022;
+    --sunic-txt-muted: #5a5d63;
+    --sunic-border-color: #eaecef;
+}
+
+.sunicCareersWrapper {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--sunic-txt-dark);
+    background-color: var(--sunic-white);
+    padding-top: 75px;
+    /* Safely avoids navbar layer overlap */
+}
+
+.careersHorizontalContainer {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   HERO HEADBOARD SECTION STYLING
+   ========================================================================== */
+.sunicCareersHero {
+    background-color: var(--sunic-dark-slate);
+    background-image: radial-gradient(circle at 85% 15%, rgba(255, 107, 0, 0.14) 0%, transparent 60%);
+    padding: 100px 0 80px 0;
+    text-align: center;
+    position: relative;
+}
+
+.careersHeroContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.careersMiniTag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--sunic-orange);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.careersMainTitle {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--sunic-white);
+    letter-spacing: -0.03em;
+    margin: 0 0 18px 0;
+    line-height: 1.15;
+}
+
+.careersSubtitle {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0 0 45px 0;
+}
+
+/* LinkedIn Interactive Search Integration Bar */
+.linkedinSearchBar {
+    background-color: var(--sunic-white);
+    border-radius: 50px;
+    padding: 8px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.searchBlock {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 75%;
+}
+
+.searchIcon {
+    color: var(--sunic-orange);
+    font-size: 1.1rem;
+}
+
+.searchBlock input {
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    color: var(--sunic-txt-dark);
+    outline: none;
+    font-family: inherit;
+}
+
+.searchMetrics {
+    font-size: 0.88rem;
+    color: var(--sunic-txt-muted);
+    border-left: 1px solid var(--sunic-border-color);
+    padding-left: 20px;
+    white-space: nowrap;
+}
+
+.searchMetrics strong {
+    color: var(--sunic-orange);
+}
+
+/* ==========================================================================
+   MAIN SYSTEM JOB MATRIX FRAMEWORK
+   ========================================================================== */
+.careersMainBoard {
+    background-color: var(--sunic-grey-bg);
+    padding: 60px 0 100px 0;
+}
+
+.categoryFiltersGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.filterPillBtn {
+    background-color: var(--sunic-white);
+    border: 1px solid var(--sunic-border-color);
+    padding: 8px 18px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--sunic-txt-muted);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filterPillBtn:hover {
+    color: var(--sunic-orange);
+    border-color: var(--sunic-orange);
+    background-color: #fff4ed;
+}
+
+.activePill {
+    background-color: var(--sunic-orange) !important;
+    color: var(--sunic-white) !important;
+    border-color: var(--sunic-orange) !important;
+    box-shadow: 0 4px 12px rgba(255, 107, 0, 0.15);
+}
+
+/* LinkedIN Clean Architecture Grid Layout */
+.linkedinJobCardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 24px;
+}
+
+.linkedinStyleJobCard {
+    background-color: var(--sunic-white);
+    border: 1px solid var(--sunic-border-color);
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cardHeaderMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.jobCategoryBadge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--sunic-orange);
+    background-color: #fff4ed;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.jobTypeBadge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--sunic-txt-muted);
+    background-color: #eaecef;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.jobPositionTitle {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--sunic-txt-dark);
+    margin: 0 0 6px 0;
+    letter-spacing: -0.01em;
+}
+
+.companyContextTitle {
+    font-size: 0.92rem;
+    color: var(--sunic-txt-muted);
+    font-weight: 500;
+    margin: 0 0 20px 0;
+}
+
+.jobMetricsRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-top: 1px dashed var(--sunic-border-color);
+    padding-top: 16px;
+    margin-bottom: 24px;
+}
+
+.metricNode {
+    font-size: 0.88rem;
+    color: var(--sunic-txt-muted);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.metricNode i {
+    color: #a0a5ad;
+}
+
+.cardActionBottom {
+    margin-top: auto;
+}
+
+.linkedinApplyBtn {
+    width: 100%;
+    background-color: var(--sunic-white);
+    border: 1px solid var(--sunic-orange);
+    color: var(--sunic-orange);
+    padding: 11px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+}
+
+.linkedinStyleJobCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+    border-color: rgba(255, 107, 0, 0.4);
+}
+
+.linkedinStyleJobCard:hover .linkedinApplyBtn {
+    background-color: var(--sunic-orange);
+    color: var(--sunic-white);
+    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.2);
+}
+
+.noJobsFallback {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--sunic-white);
+    border-radius: 12px;
+    border: 1px dashed var(--sunic-border-color);
+}
+
+.emptyIcon {
+    font-size: 2.5rem;
+    color: #ccc;
+    margin-bottom: 16px;
+}
+
+/* ==========================================================================
+   APPLICATION MODAL INTERFACE FRAMEWORK
+   ========================================================================== */
+.modalDarkOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(20, 21, 24, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.applicationSheetCard {
+    background-color: var(--sunic-white);
+    width: 100%;
+    max-width: 650px;
+    border-radius: 16px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalScaleUp 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes modalScaleUp {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modalHeaderBlock {
+    padding: 30px 35px;
+    border-bottom: 1px solid var(--sunic-border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.modalContextLabel {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--sunic-orange);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.modalHeaderBlock h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--sunic-txt-dark);
+    margin: 0 0 4px 0;
+}
+
+.modalSubtext {
+    font-size: 0.92rem;
+    color: var(--sunic-txt-muted);
+    margin: 0;
+}
+
+.closeModalXBtn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--sunic-txt-muted);
+    cursor: pointer;
+    line-height: 0.5;
+}
+
+.closeModalXBtn:hover {
+    color: var(--sunic-txt-dark);
+}
+
+.modalApplicationForm {
+    padding: 30px 35px;
+}
+
+.formFieldRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.structuralSpacing {
+    margin-bottom: 16px;
+}
+
+.fieldGroup label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--sunic-txt-dark);
+    text-transform: uppercase;
+}
+
+.fieldGroup input,
+.fieldGroup select,
+.fieldGroup textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--sunic-grey-bg);
+    border: 1px solid var(--sunic-border-color);
+    padding: 11px 14px;
+    font-size: 0.92rem;
+    border-radius: 6px;
+    font-family: inherit;
+    color: var(--sunic-txt-dark);
+    transition: all 0.2s ease;
+}
+
+.fieldGroup input:focus,
+.fieldGroup select:focus,
+.fieldGroup textarea:focus {
+    outline: none;
+    border-color: var(--sunic-orange);
+    background-color: var(--sunic-white);
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.08);
+}
+
+/* Fresher Dynamic Toggle Element Architecture */
+.fresherToggleBlock {
+    margin-bottom: 24px;
+    background-color: #fff4ed;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px dashed rgba(255, 107, 0, 0.3);
+}
+
+.checkboxSwitchContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkboxSwitchContainer input {
+    display: none;
+}
+
+.customCheckboxVisual {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--sunic-orange);
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    background-color: var(--sunic-white);
+    flex-shrink: 0;
+}
+
+.checkboxSwitchContainer input:checked+.customCheckboxVisual::after {
+    content: "✓";
+    position: absolute;
+    color: var(--sunic-white);
+    background-color: var(--sunic-orange);
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.checkboxLabelText {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--sunic-txt-dark);
+}
+
+/* Smooth Dynamic Collapsible Layout Transitions */
+.fresherCollapsibleSection {
+    max-height: 400px;
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.35s ease, margin 0.35s ease;
+}
+
+.fresherCollapsibleSection.collapsedState {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+    pointer-events: none;
+}
+
+.modalSubmitAppBtn {
+    width: 100%;
+    background-color: var(--sunic-orange);
+    color: var(--sunic-white);
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.modalSubmitAppBtn:hover {
+    background-color: var(--sunic-orange-hover);
+}
+
+/* Success Confirmation Screen Layout */
+.successStateContainer {
+    padding: 60px;
+    text-align: center;
+}
+
+.successCheckCircle {
+    width: 60px;
+    height: 60px;
+    background-color: #2e7d32;
+    color: var(--sunic-white);
+    font-size: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px auto;
+}
+
+.successStateContainer h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+}
+
+.successStateContainer p {
+    color: var(--sunic-txt-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT CONSTRAINTS
+   ========================================================================== */
+@media (max-width: 900px) {
+    .careersMainTitle {
+        font-size: 2.3rem;
+    }
+
+    .linkedinJobCardsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .linkedinSearchBar {
+        flex-direction: column;
+        border-radius: 16px;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .searchBlock {
+        width: 100%;
+    }
+
+    .searchMetrics {
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .formFieldRow {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 0;
+    }
+
+    .fieldGroup {
+        margin-bottom: 16px;
+    }
+
+    .modalHeaderBlock,
+    .modalApplicationForm {
+        padding: 20px;
+    }
+}

@@ -8,15 +8,16 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // Derive active item directly from pathname
+  // Derive active item directly from pathname string match
   const getActiveItem = (pathname) => {
     const path = pathname.toLowerCase();
     if (path === "/") return "home";
     if (path === "/aboutt") return "about";
     if (path === "/services") return "services";
     if (path === "/products") return "products";
-    if (path === "/contact") return "contact"; 
     if (path === "/project") return "project";
+    if (path === "/careers") return "careers"; // Matches the new dynamic Careers link
+    if (path === "/contact") return "contact"; 
     return "";
   };
 
@@ -38,15 +39,18 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
-        {/* Logo Section */}
+        
+        {/* Logo Branding Hub */}
         <div className="nav-logo">
           <Link to="/" onClick={closeMenu}>
             <img src={logo} alt="Sunic Logo" className="logo-img" />
-            <span className="logo-text">Sunic Tech Solutions <span className="text-dark"></span></span>
+            <span className="logo-text">
+              Sunic Tech <span className="text-dark">Solutions</span>
+            </span>
           </Link>
         </div>
 
-        {/* Navigation Menu */}
+        {/* Global Navigation Menu Links */}
         <div className={`nav-menu ${isOpen ? "active" : ""}`}>
           <Link
             to="/"
@@ -55,6 +59,7 @@ const Navbar = () => {
           >
             <i className="fas fa-home"></i> Home
           </Link>
+          
           <Link
             to="/aboutt"
             onClick={closeMenu}
@@ -62,6 +67,7 @@ const Navbar = () => {
           >
             <i className="fas fa-info-circle"></i> About
           </Link>
+          
           <Link
             to="/services"
             onClick={closeMenu}
@@ -69,6 +75,7 @@ const Navbar = () => {
           >
             <i className="fas fa-cogs"></i> Services
           </Link>
+          
           <Link
             to="/products"
             onClick={closeMenu}
@@ -76,6 +83,7 @@ const Navbar = () => {
           >
             <i className="fas fa-box-open"></i> Products
           </Link>
+          
           <Link
             to="/project"
             onClick={closeMenu}
@@ -83,6 +91,16 @@ const Navbar = () => {
           >
             <i className="fas fa-project-diagram"></i> Project
           </Link>
+
+          {/* ADDED: Careers Navigation Node Element */}
+          <Link
+            to="/careers"
+            onClick={closeMenu}
+            className={`nav-item ${activeItem === "careers" ? "active" : ""}`}
+          >
+            <i className="fas fa-briefcase"></i> Jobs
+          </Link>
+          
           <Link
             to="/contact"
             onClick={closeMenu}
@@ -92,7 +110,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile Hamburger Menu Toggle */}
+        {/* Mobile Hamburger Drawer Trigger */}
         <div
           className={`nav-toggle ${isOpen ? "active" : ""}`}
           onClick={toggleMenu}
@@ -101,6 +119,7 @@ const Navbar = () => {
           <span></span>
           <span></span>
         </div>
+
       </div>
     </nav>
   );

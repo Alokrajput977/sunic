@@ -2,6 +2,8 @@ import React from "react";
 import Lottie from "lottie-react";
 import warehouseAnim from "./warehouse.json";
 import trainnAnim from "./trainn.json";
+// import New from "./new.json";
+
 import "../css/Hero.css";
 
 const Hero = () => {
@@ -46,6 +48,10 @@ const Hero = () => {
           <div className="lottie-block train-center">
             <Lottie animationData={trainnAnim} loop={true} autoplay={true} />
           </div>
+
+          {/* <div className="lottie-block train-center">
+            <Lottie animationData={New} loop={true} autoplay={true} />
+          </div> */}
         </div>
       </div>
     </section>

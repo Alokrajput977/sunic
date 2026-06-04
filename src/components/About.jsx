@@ -34,7 +34,7 @@ const About = () => {
       }, 30);
     });
 
-    // Animate years of experience
+    // Animate years of experience+
     let startYear = 0;
     const endYear = 15;
     const yearCounter = setInterval(() => {
