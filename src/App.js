@@ -17,6 +17,7 @@ import ContactPage from "./components/MainContect.jsx";
 import Jobs from "./components/jobs.jsx";
 import Book from "./components/book.jsx";
 import AboutEnterprise from "./components/Enterprise.jsx";
+import Project from "./components/project.jsx";
 
 import "./App.css";
 
@@ -50,6 +51,7 @@ function App() {
           <Route path="/careers" element={<Jobs/>} />
           <Route path="/book" element={<Book/>}/>
           <Route path="/Enterprise" element={<AboutEnterprise/>}/>
+          <Route path="/Project" element={<Project/>}/>
         </Routes>
       </div>
     </Router>
