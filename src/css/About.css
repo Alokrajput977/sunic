@@ -329,3 +329,210 @@
     justify-content: flex-start;
   }
 }
+
+
+/* ================= 992px ================= */
+@media screen and (max-width:992px){
+
+  .about{
+    padding:80px 0;
+  }
+
+  .about-content{
+    grid-template-columns:1fr;
+    gap:4rem;
+  }
+
+  .section-header h2{
+    font-size:2.5rem;
+  }
+
+  .about-text-panel h3{
+    font-size:2rem;
+  }
+
+}
+
+
+/* ================= 768px ================= */
+@media screen and (max-width:768px){
+
+  .about .container{
+    padding:0 20px;
+  }
+
+  .section-header{
+    margin-bottom:3rem;
+  }
+
+  .section-header h2{
+    font-size:2rem;
+  }
+
+  .section-header p{
+    font-size:1rem;
+  }
+
+  .about-text-panel h3{
+    font-size:1.7rem;
+    text-align:center;
+  }
+
+  .about-text-panel p{
+    text-align:center;
+  }
+
+  .about-features-grid{
+    grid-template-columns:1fr;
+  }
+
+  .btn-about-cta{
+    width:100%;
+    justify-content:center;
+  }
+
+  .experience-badge{
+    right:10px;
+    bottom:-20px;
+    padding:1rem 1.5rem;
+  }
+
+  .experience-badge .years{
+    font-size:2rem;
+  }
+
+}
+
+
+/* ================= 576px ================= */
+@media screen and (max-width:576px){
+
+  .section-header h2{
+    font-size:1.8rem;
+  }
+
+  .about-text-panel h3{
+    font-size:1.5rem;
+  }
+
+  .feature-card{
+    padding:15px;
+  }
+
+  .feature-info h4{
+    font-size:1rem;
+  }
+
+  .feature-info p{
+    font-size:.85rem;
+  }
+
+  .experience-badge{
+    position:relative;
+    margin-top:20px;
+    right:auto;
+    bottom:auto;
+    width:180px;
+  }
+
+}
+
+
+/* ================= 400px ================= */
+@media screen and (max-width:400px){
+
+  .about{
+    padding:60px 0;
+  }
+
+  .about .container{
+    padding:0 15px;
+  }
+
+  .section-header h2{
+    font-size:1.6rem;
+  }
+
+  .about-text-panel h3{
+    font-size:1.3rem;
+  }
+
+  .feature-card{
+    flex-direction:column;
+    text-align:center;
+    align-items:center;
+  }
+
+  .feature-info{
+    text-align:center;
+  }
+
+  .btn-about-cta{
+    padding:14px 20px;
+    font-size:.9rem;
+  }
+
+}
+
+
+/* ================= 300px ================= */
+@media screen and (max-width:300px){
+
+  .about .container{
+    padding:0 10px;
+  }
+
+  .section-header h2{
+    font-size:1.3rem;
+  }
+
+  .section-header p{
+    font-size:.85rem;
+  }
+
+  .about-text-panel h3{
+    font-size:1.1rem;
+  }
+
+  .about-text-panel p{
+    font-size:.85rem;
+  }
+
+  .feature-card{
+    padding:12px;
+  }
+
+  .feature-icon{
+    width:40px;
+    height:40px;
+    font-size:1rem;
+  }
+
+  .feature-info h4{
+    font-size:.9rem;
+  }
+
+  .feature-info p{
+    font-size:.8rem;
+  }
+
+  .experience-badge{
+    width:100%;
+    padding:15px;
+  }
+
+  .experience-badge .years{
+    font-size:1.6rem;
+  }
+
+  .experience-badge .badge-text{
+    font-size:.7rem;
+  }
+
+  .btn-about-cta{
+    width:100%;
+    font-size:.8rem;
+    padding:12px;
+  }
+
+}

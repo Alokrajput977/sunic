@@ -591,3 +591,313 @@
         padding: 20px;
     }
 }
+
+
+/* ======================= 992px ======================= */
+@media screen and (max-width:992px){
+
+    .careersMainTitle{
+        font-size:2.4rem;
+    }
+
+    .careersSubtitle{
+        font-size:1rem;
+    }
+
+    .linkedinJobCardsGrid{
+        grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    }
+
+}
+
+/* ======================= 768px ======================= */
+@media screen and (max-width:768px){
+
+    .careersMainTitle{
+        font-size:2rem;
+        line-height:1.3;
+    }
+
+    .careersSubtitle{
+        font-size:.95rem;
+    }
+
+    .linkedinSearchBar{
+        flex-direction:column;
+        border-radius:20px;
+        gap:15px;
+        padding:18px;
+    }
+
+    .searchBlock{
+        width:100%;
+    }
+
+    .searchMetrics{
+        border-left:none;
+        padding-left:0;
+        text-align:center;
+    }
+
+    .linkedinJobCardsGrid{
+        grid-template-columns:1fr;
+    }
+
+    .jobMetricsRow{
+        gap:10px;
+    }
+
+    .modalHeaderBlock{
+        padding:20px;
+    }
+
+    .modalApplicationForm{
+        padding:20px;
+    }
+
+    .formFieldRow{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ======================= 576px ======================= */
+@media screen and (max-width:576px){
+
+    .careersHorizontalContainer{
+        padding:0 15px;
+    }
+
+    .sunicCareersHero{
+        padding:80px 0 60px;
+    }
+
+    .careersMainTitle{
+        font-size:1.7rem;
+    }
+
+    .careersSubtitle{
+        font-size:.9rem;
+    }
+
+    .categoryFiltersGrid{
+        justify-content:flex-start;
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        padding-bottom:10px;
+    }
+
+    .filterPillBtn{
+        white-space:nowrap;
+    }
+
+    .linkedinStyleJobCard{
+        padding:20px;
+    }
+
+    .jobPositionTitle{
+        font-size:1.15rem;
+    }
+
+    .cardHeaderMeta{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .jobMetricsRow{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .applicationSheetCard{
+        max-height:95vh;
+    }
+
+    .modalHeaderBlock h2{
+        font-size:1.2rem;
+    }
+
+    .checkboxLabelText{
+        font-size:.8rem;
+    }
+
+    .successStateContainer{
+        padding:30px 20px;
+    }
+
+}
+
+/* ======================= 400px ======================= */
+@media screen and (max-width:400px){
+
+    .careersHeroContainer{
+        padding:0 15px;
+    }
+
+    .careersMainTitle{
+        font-size:1.4rem;
+    }
+
+    .careersMiniTag{
+        font-size:.7rem;
+    }
+
+    .linkedinSearchBar{
+        padding:15px;
+    }
+
+    .searchBlock input{
+        font-size:.9rem;
+    }
+
+    .searchMetrics{
+        font-size:.8rem;
+    }
+
+    .linkedinStyleJobCard{
+        padding:15px;
+    }
+
+    .jobPositionTitle{
+        font-size:1rem;
+    }
+
+    .companyContextTitle,
+    .metricNode{
+        font-size:.8rem;
+    }
+
+    .linkedinApplyBtn{
+        font-size:.85rem;
+    }
+
+    .modalHeaderBlock,
+    .modalApplicationForm{
+        padding:15px;
+    }
+
+    .fieldGroup label{
+        font-size:.75rem;
+    }
+
+    .fieldGroup input,
+    .fieldGroup select,
+    .fieldGroup textarea{
+        font-size:.85rem;
+        padding:10px;
+    }
+
+    .modalSubmitAppBtn{
+        font-size:.9rem;
+        padding:12px;
+    }
+
+}
+
+/* ======================= 300px ======================= */
+@media screen and (max-width:300px){
+
+    .careersHorizontalContainer,
+    .careersHeroContainer{
+        padding:0 10px;
+    }
+
+    .careersMainTitle{
+        font-size:1.15rem;
+    }
+
+    .careersSubtitle{
+        font-size:.8rem;
+    }
+
+    .careersMiniTag{
+        font-size:.65rem;
+    }
+
+    .linkedinSearchBar{
+        padding:10px;
+        border-radius:15px;
+    }
+
+    .searchBlock{
+        gap:8px;
+    }
+
+    .searchBlock input{
+        font-size:.8rem;
+    }
+
+    .searchMetrics{
+        font-size:.75rem;
+    }
+
+    .filterPillBtn{
+        padding:6px 12px;
+        font-size:.75rem;
+    }
+
+    .linkedinStyleJobCard{
+        padding:12px;
+    }
+
+    .jobCategoryBadge,
+    .jobTypeBadge{
+        font-size:.65rem;
+    }
+
+    .jobPositionTitle{
+        font-size:.9rem;
+    }
+
+    .companyContextTitle,
+    .metricNode{
+        font-size:.75rem;
+    }
+
+    .linkedinApplyBtn{
+        font-size:.8rem;
+        padding:10px;
+    }
+
+    .modalHeaderBlock h2{
+        font-size:1rem;
+    }
+
+    .modalSubtext{
+        font-size:.75rem;
+    }
+
+    .closeModalXBtn{
+        font-size:1.5rem;
+    }
+
+    .checkboxLabelText{
+        font-size:.7rem;
+    }
+
+    .fieldGroup label{
+        font-size:.7rem;
+    }
+
+    .fieldGroup input,
+    .fieldGroup select,
+    .fieldGroup textarea{
+        padding:8px;
+        font-size:.8rem;
+    }
+
+    .modalSubmitAppBtn{
+        font-size:.8rem;
+        padding:10px;
+    }
+
+    .successStateContainer h3{
+        font-size:1rem;
+    }
+
+    .successStateContainer p{
+        font-size:.8rem;
+    }
+
+}

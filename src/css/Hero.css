@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 80px 4rem 2rem;
-  max-width: 1600px; /* Expanded slightly to accommodate the triple composition */
+  max-width: 1600px;
+  /* Expanded slightly to accommodate the triple composition */
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -37,7 +38,8 @@
 
 .hero-content {
   flex: 1;
-  max-width: 550px; /* Gives the triple animation panel extra breathing room */
+  max-width: 550px;
+  /* Gives the triple animation panel extra breathing room */
   padding-right: 2rem;
   animation: fadeInUp 1s ease;
 }
@@ -103,7 +105,8 @@
 
 /* --- TRIPLE ANIMATION SCENE DESIGN --- */
 .hero-image {
-  flex: 1.6; /* Allocates optimal layout space to display all 3 files */
+  flex: 1.6;
+  /* Allocates optimal layout space to display all 3 files */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,7 +115,8 @@
 
 .animation-scene {
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1.1fr; /* Harmonizes sizes across the horizon */
+  grid-template-columns: 1.1fr 1fr 1.1fr;
+  /* Harmonizes sizes across the horizon */
   align-items: center;
   gap: 0.5rem;
   width: 100%;
@@ -135,8 +139,9 @@
 }
 
 .train-center {
-  transform: scale(1.15) translate(-15px, 40px); 
-  z-index: 2; /* Keeps the train traveling in front of the warehouse edges */
+  transform: scale(1.15) translate(-15px, 40px);
+  z-index: 2;
+  /* Keeps the train traveling in front of the warehouse edges */
   margin-top: 260px;
   margin-left: -100px;
 }
@@ -150,6 +155,7 @@
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -161,9 +167,11 @@
   .hero {
     padding: 100px 2rem 2rem;
   }
+
   .hero-title {
     font-size: 3.2rem;
   }
+
   .train-center {
     transform: scale(1.1) translate(-100px, 25px);
   }
@@ -175,17 +183,17 @@
     text-align: center;
     padding: 140px 1.5rem 4rem;
   }
-  
+
   .hero-content {
     padding-right: 0;
     margin-bottom: 4rem;
     max-width: 100%;
   }
-  
+
   .hero-buttons {
     justify-content: center;
   }
-  
+
   .hero-image {
     width: 100%;
   }
@@ -223,5 +231,150 @@
   .hero-feature-text {
     margin: 3rem auto 0;
     text-align: center;
+  }
+}
+
+
+/* ===================== 768px ===================== */
+@media screen and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 20px 50px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding-right: 0;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-feature-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  .animation-scene {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .lottie-block {
+    width: 100%;
+  }
+
+  .warehouse-left,
+  .train-center,
+  .warehouse-right {
+    margin: 0;
+    transform: none;
+  }
+}
+
+/* ===================== 576px ===================== */
+@media screen and (max-width: 576px) {
+  .hero {
+    padding: 90px 15px 40px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btn {
+    width: 220px;
+    text-align: center;
+  }
+
+  .hero-feature-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===================== 400px ===================== */
+@media screen and (max-width: 400px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .hero-buttons {
+    width: 100%;
+  }
+
+  .hero-feature-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* ===================== 300px ===================== */
+@media screen and (max-width: 300px) {
+  .hero {
+    padding: 80px 10px 30px;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 12px;
+  }
+
+  .hero-feature-text p {
+    font-size: 0.8rem;
+  }
+
+  .lottie-block {
+    width: 100%;
+  }
+
+  .warehouse-left,
+  .train-center,
+  .warehouse-right {
+    margin: 0 !important;
+    transform: none !important;
   }
 }

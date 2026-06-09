@@ -2,7 +2,6 @@ import React from "react";
 import Lottie from "lottie-react";
 import warehouseAnim from "./warehouse.json";
 import trainnAnim from "./trainn.json";
-// import New from "./new.json";
 
 import "../css/Hero.css";
 
@@ -12,7 +11,7 @@ const Hero = () => {
       {/* Left content structured exactly like the reference UI */}
       <div className="hero-content">
         <h1 className="hero-title">
-          Automate your <span className="text-orange">Location Tracking</span> with our AI platform
+        <span className="text-orange">Automate your Location Tracking</span> with our AI platform
         </h1>
         
         <p className="hero-subtitle">
@@ -48,10 +47,6 @@ const Hero = () => {
           <div className="lottie-block train-center">
             <Lottie animationData={trainnAnim} loop={true} autoplay={true} />
           </div>
-
-          {/* <div className="lottie-block train-center">
-            <Lottie animationData={New} loop={true} autoplay={true} />
-          </div> */}
         </div>
       </div>
     </section>
