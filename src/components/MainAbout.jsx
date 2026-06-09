@@ -221,14 +221,22 @@ const Mainabout = () => {
          7. HIGH-CONVERSION CALL TO ACTION (CTA)
          ========================================================================== */}
       <section className={styles.aboutCta}>
-        <div className={styles.container}>
-          <h2>Accelerate Your Node Infrastructure Today</h2>
-          <p>Connect with a system engineer to audit and scale your workflow throughput vectors.</p>
-          <button className={styles.ctaButton}>
-            Initiate Consultation Desk <i className="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </section>
+  <div className={styles.container}>
+    <div className={styles.ctaContent}>
+      <div className={styles.ctaText}>
+        <h2>Accelerate Your Node Infrastructure Today</h2>
+        <p>
+          Connect with a system engineer to audit and scale your workflow throughput vectors.
+        </p>
+
+        <button className={styles.ctaButton}>
+          Initiate Consultation Desk
+          <i className="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
       <Footer />
     </div>
