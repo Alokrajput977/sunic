@@ -1,4 +1,6 @@
+// About.jsx
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../css/About.css";
 
 const statsData = [
@@ -13,11 +15,11 @@ const About = () => {
   const [years, setYears] = useState(0);
 
   useEffect(() => {
-    // Animate stats counters smoothly
+    // Animate stats counters
     statsData.forEach((stat, index) => {
       let start = 0;
       const end = stat.value;
-      const duration = 8000; // Adjusted duration for a faster, snappy feel
+      const duration = 2000;
       const increment = Math.ceil(end / (duration / 30));
 
       const counter = setInterval(() => {
@@ -34,7 +36,7 @@ const About = () => {
       }, 30);
     });
 
-    // Animate years of experience+
+    // Animate years of experience
     let startYear = 0;
     const endYear = 15;
     const yearCounter = setInterval(() => {
@@ -57,7 +59,7 @@ const About = () => {
         </div>
 
         <div className="about-content">
-          {/* Left Side: Contextual Automation Image with Layout Badge */}
+          {/* Left Side: Contextual Automation Image */}
           <div className="about-image-wrapper">
             <div className="image-border-effect"></div>
             <img
@@ -120,9 +122,10 @@ const About = () => {
               </div>
             </div>
 
-            <a href="#contact" className="btn btn-about-cta">
+            {/* FIXED: Use Link from react-router-dom instead of anchor tag */}
+            <Link to="/enterprise" className="btn btn-about-cta">
               Discover Our Platform <i className="fas fa-arrow-right"></i>
-            </a>
+            </Link>
           </div>
         </div>
 

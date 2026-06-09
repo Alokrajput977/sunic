@@ -16,6 +16,7 @@ import MainProduct from "./components/MainProduct.jsx";
 import ContactPage from "./components/MainContect.jsx";
 import Jobs from "./components/jobs.jsx";
 import Book from "./components/book.jsx";
+import AboutEnterprise from "./components/Enterprise.jsx";
 
 import "./App.css";
 
@@ -48,6 +49,7 @@ function App() {
           <Route path="/contact" element={<ContactPage/>} />
           <Route path="/careers" element={<Jobs/>} />
           <Route path="/book" element={<Book/>}/>
+          <Route path="/Enterprise" element={<AboutEnterprise/>}/>
         </Routes>
       </div>
     </Router>
